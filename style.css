@@ -40,13 +40,13 @@ nav ul li a:hover {
     color: #ff6600;
 }
 
-#hero {
+#shop {
     background: url('background.webp') no-repeat center center/cover;
     padding: 100px 20px;
     text-align: center;
 }
 
-#hero h2 {
+#shop s2 {
     font-size: 48px;
     margin-bottom: 20px;
 }
