@@ -183,3 +183,29 @@ a:active {
     color: #ff4500;  /* Slightly darker orange when the link is clicked */
 }
 
+/* Add spacing between list items */
+.content ul > li {
+    margin-bottom: 20px; /* Adds space between each primary list item */
+}
+
+/* Add spacing between nested list items */
+.content ul ul > li {
+    margin-bottom: 10px; /* Adds smaller space between sub-items */
+}
+
+/* Add spacing to paragraphs inside list items */
+.content ul li p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Ensure consistent padding inside the section */
+.content {
+    padding: 20px; /* Adds padding around the content for better readability */
+}
+
+/* Style headers within tool details */
+.content h2 {
+    margin-top: 30px; /* Adds space above each section title */
+    margin-bottom: 10px;
+}
