@@ -113,6 +113,27 @@ nav ul li a:hover {
     color: #ffd700;  /* Bright yellow on hover */
 }
 
+/* Style for the guide steps list */
+.guide ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+.guide ol li {
+    margin: 10px 0;
+}
+
+.guide ol li a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.guide ol li a:hover {
+    color: #ffd700;  /* Bright yellow on hover */
+}
+
 /* Footer Styling */
 footer {
     background-color: #333;
