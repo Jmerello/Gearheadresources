@@ -22,6 +22,7 @@
         <p>Understanding electrical systems is crucial for diagnosing and repairing many vehicle issues.</p>
     </section>
     <footer>
+        <a href="step4.html" class="nav-button next-button">Previous Step</a>
         <a href="beginner.html">Back to Guide</a>
     </footer>
 </body>
