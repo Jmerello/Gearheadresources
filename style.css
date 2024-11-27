@@ -163,3 +163,23 @@ footer .nav-button:hover {
     background-color: #ff6600;
     color: #fff;
 }
+
+/* General link styling for all states */
+a {
+    color: #ff6600;  /* Orange for default link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:visited {
+    color: #ff6600;  /* Ensures visited links remain orange */
+}
+
+a:hover {
+    color: #ffd700;  /* Yellow on hover */
+}
+
+a:active {
+    color: #ff4500;  /* Slightly darker orange when the link is clicked */
+}
+
