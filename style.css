@@ -51,6 +51,17 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+.resource-item h3 a {
+    color: #ff6600;  /* Matches the header color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.resource-item h3 a:hover {
+    color: #ffd700;  /* Bright yellow on hover */
+}
+
+
 #featured {
     padding: 50px 20px;
     text-align: center;
