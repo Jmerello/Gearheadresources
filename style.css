@@ -34,14 +34,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ff6600;  /* Consistent orange links */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ff6600;  /* Orange on hover */
+    color: #ffd700;  /* Bright yellow on hover */
 }
 
 /* Shop Section */
@@ -54,7 +54,7 @@ nav ul li a:hover {
 #shop s2 {
     font-size: 48px;
     margin-bottom: 20px;
-    color: #ff6600;  /* Ensures consistency with header color */
+    color: #ff6600;
 }
 
 /* Resource Items */
@@ -65,7 +65,7 @@ nav ul li a:hover {
 }
 
 .resource-item h3 a:hover {
-    color: #ffd700;  /* Bright yellow on hover */
+    color: #ffd700;
 }
 
 /* Featured Section */
@@ -110,10 +110,10 @@ nav ul li a:hover {
 }
 
 .resource-category h2 a:hover {
-    color: #ffd700;  /* Bright yellow on hover */
+    color: #ffd700;
 }
 
-/* Style for the guide steps list */
+/* Guide Steps List */
 .guide ol {
     list-style-type: decimal;
     padding-left: 20px;
@@ -131,7 +131,7 @@ nav ul li a:hover {
 }
 
 .guide ol li a:hover {
-    color: #ffd700;  /* Bright yellow on hover */
+    color: #ffd700;
 }
 
 /* Footer Styling */
@@ -143,4 +143,23 @@ footer {
     bottom: 0;
     width: 100%;
     color: #ccc;
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Space between navigation buttons */
+}
+
+/* Navigation Buttons in Footer */
+footer .nav-button {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #ff6600;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+footer .nav-button:hover {
+    background-color: #ff6600;
+    color: #fff;
 }
