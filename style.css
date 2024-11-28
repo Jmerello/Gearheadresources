@@ -70,7 +70,7 @@ nav ul li a:hover {
 
 /* Shop Section */
 #shop {
-    background: url('background.webp') no-repeat center center/cover;
+    background: url('shop.jpg') no-repeat center center/cover;
     padding: 100px 20px;
     text-align: center;
 }
