@@ -1,13 +1,26 @@
 /* General Body Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #222;
+    background: url('toolbox.webp') no-repeat center center/cover;
+    background-size: cover;  /* Ensure background covers the whole page */
     color: #fff;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
+}
+
+/* Add overlay for better text readability */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);  /* Black overlay with 50% opacity */
+    z-index: -1;
 }
 
 /* Content section takes up available space */
@@ -19,7 +32,7 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8);  /* Semi-transparent background */
     padding: 20px 0;
     text-align: center;
 }
@@ -108,6 +121,7 @@ nav ul li a:hover {
     margin: 50px 0;
 }
 
+/* Background adjustment for the resource category */
 .resource-category {
     margin: 20px 0;
 }
