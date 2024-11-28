@@ -71,6 +71,7 @@ nav ul li a:hover {
 /* Shop Section */
 #shop {
     background: url('shop.jpg') no-repeat center center/cover;
+    background-size: contain;
     padding: 100px 20px;
     text-align: center;
 }
