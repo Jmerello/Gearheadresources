@@ -232,3 +232,25 @@ footer {
     padding: 10px;
     position: relative;
 }
+
+/* Ensure footer stays at the bottom but content doesn't get cut off */
+body {
+    margin: 0;
+    padding-bottom: 50px; /* This will ensure space for the footer */
+}
+
+/* Content padding to avoid footer overlap */
+.content {
+    padding-bottom: 50px; /* Adjust this based on the height of the footer */
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
