@@ -16,6 +16,7 @@ body {
 body::before {
     content: "";
     position: absolute;
+    background-attachment: fixed;
     top: 0;
     left: 0;
     width: 100%;
