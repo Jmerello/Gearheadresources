@@ -15,7 +15,6 @@ body {
 /* Add overlay for better text readability */
 body::before {
     content: "";
-    position: absolute;
     position: fixed;
     top: 0;
     left: 0;
