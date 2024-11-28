@@ -209,3 +209,26 @@ a:active {
     margin-top: 30px; /* Adds space above each section title */
     margin-bottom: 10px;
 }
+
+/* Ensure the body fills the entire viewport */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Content section takes up available space */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Footer at the bottom of the page */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
