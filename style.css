@@ -5,6 +5,16 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Content section takes up available space */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    padding-bottom: 50px; /* Prevents footer overlap */
 }
 
 /* Header Styling */
@@ -137,12 +147,12 @@ nav ul li a:hover {
 /* Footer Styling */
 footer {
     background-color: #333;
+    color: white;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
-    color: #ccc;
     display: flex;
     justify-content: center;
     gap: 20px;  /* Space between navigation buttons */
@@ -199,58 +209,9 @@ a:active {
     margin-bottom: 10px;
 }
 
-/* Ensure consistent padding inside the section */
-.content {
-    padding: 20px; /* Adds padding around the content for better readability */
-}
-
 /* Style headers within tool details */
 .content h2 {
     margin-top: 30px; /* Adds space above each section title */
     margin-bottom: 10px;
 }
 
-/* Ensure the body fills the entire viewport */
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    margin: 0;
-}
-
-/* Content section takes up available space */
-.content {
-    flex-grow: 1;
-    padding: 20px;
-}
-
-/* Footer at the bottom of the page */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-}
-
-/* Ensure footer stays at the bottom but content doesn't get cut off */
-body {
-    margin: 0;
-    padding-bottom: 50px; /* This will ensure space for the footer */
-}
-
-/* Content padding to avoid footer overlap */
-.content {
-    padding-bottom: 50px; /* Adjust this based on the height of the footer */
-}
-
-/* Footer styling */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
