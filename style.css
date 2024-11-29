@@ -70,6 +70,10 @@ nav ul li a:hover {
 
 /* Shop Section */
 
+#shop {
+    text-align: center;
+}
+
 #shop s2 {
     text-align: center;
     font-size: 48px;
