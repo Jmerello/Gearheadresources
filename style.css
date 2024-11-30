@@ -1,4 +1,61 @@
 /* General Body Styling */
+/* Mobile Portrait Mode */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Adjust header */
+    header h1 {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    /* Stack navigation items vertically */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Adjust resource items */
+    .resource-item {
+        width: 90%;  /* Make items take more width */
+        margin: 10px 0;  /* Add space between items */
+    }
+
+    /* Resize images and logos */
+    .resource-category img {
+        width: 100px;  /* Smaller image size */
+        height: auto;
+    }
+
+    /* Adjust footer */
+    footer {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    footer .nav-button {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Optional: For very small screens (less than 480px) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .resource-item {
+        padding: 15px;
+    }
+}
 body {
     font-family: Arial, sans-serif;
     background: url('toolbox.jpg') no-repeat center center/cover;
