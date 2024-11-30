@@ -43,6 +43,7 @@ nav ul li a:hover {
 }
 
 /* Shop Section */
+
 #shop {
     text-align: center;
 }
@@ -110,25 +111,12 @@ nav ul li a:hover {
 .resource-category h2 a:hover {
     color: #ffd700;
 }
-
-/* PDF Container Styling */
+/* Optional: Style for the PDF container */
 .resource-category iframe,
 .resource-category embed {
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 100%;
-    height: 600px;  /* Default for large screens */
 }
-
-/* Responsive design for smaller screens (phones) */
-@media (max-width: 768px) {
-    .resource-category iframe,
-    .resource-category embed {
-        width: 100px;
-        height: 100px;
-    }
-}
-
 /* Guide Steps List */
 .guide ol {
     list-style-type: decimal;
