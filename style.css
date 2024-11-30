@@ -1,4 +1,4 @@
-
+p0308
 /* Mobile Portrait Mode */
 @media screen and (max-width: 768px) and (orientation: portrait) {
     body {
@@ -195,7 +195,12 @@ nav ul li a:hover {
 .resource-category h2 a:hover {
     color: #ffd700;
 }
-
+/* Optional: Style for the PDF container */
+.resource-category iframe,
+.resource-category embed {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
 /* Guide Steps List */
 .guide ol {
     list-style-type: decimal;
