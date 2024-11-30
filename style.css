@@ -1,31 +1,92 @@
-/* General Background Setup */
-body {
-    background-image: url('toolbox.jpg'); /* Ensure the path is correct */
-    background-size: cover;               /* Cover full screen */
-    background-repeat: no-repeat;         /* No repeating */
-    background-position: center;          /* Centered background */
-    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
-    background-blend-mode: overlay;       /* Blend image with background color */
-    margin: 0;                            /* Remove default margins */
-    padding: 0;                           /* Remove default padding */
-    font-family: Arial, sans-serif;       /* Default font */
-    height: 100vh;                        /* Full viewport height */
-    display: flex;
-    flex-direction: column;
+/* Mobile Portrait Mode */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .resource-item {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .resource-category img {
+        width: 100px;
+        height: auto;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    footer .nav-button {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
 }
 
-/* Content section takes up available space */
+/* Optional: Very small screens (less than 480px) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .resource-item {
+        padding: 15px;
+    }
+}
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url('toolbox.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);  /* 50% black overlay */
+    z-index: -1;
+}
+
+/* Content section */
 .content {
     flex-grow: 1;
     padding: 20px;
-    padding-bottom: 50px; /* Prevents footer overlap */
-    background-color: rgba(255, 255, 255, 0.8); /* Adds white with 80% opacity */
-    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+    padding-bottom: 50px;
 }
 
 /* Header Styling */
 header {
-    background-color: rgba(51, 51, 51, 0.8);  /* Semi-transparent dark background */
+    background-color: rgba(51, 51, 51, 0.8);  /* Dark semi-transparent background */
     padding: 20px 0;
     text-align: center;
 }
@@ -33,7 +94,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 36px;
-    color: #ff6600;  /* Bright orange for a bold look */
+    color: #ff6600;  /* Bright orange */
 }
 
 /* Navigation Bar */
@@ -50,14 +111,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ff6600;  /* Consistent orange links */
+    color: #ff6600;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ffd700;  /* Bright yellow on hover */
+    color: #ffd700;  /* Hover yellow */
 }
 
 /* Shop Section */
@@ -65,15 +126,26 @@ nav ul li a:hover {
     text-align: center;
 }
 
-#shop h2 {
+#shop s2 {
+    text-align: center;
     font-size: 48px;
     margin-bottom: 20px;
     color: #ff6600;
 }
 
 /* Resource Items */
+.resource-item {
+    background-color: rgba(68, 68, 68, 0.9);  /* Semi-transparent dark gray */
+    border: 2px solid #555;
+    padding: 20px;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
 .resource-item h3 a {
-    color: #ff6600;  /* Matches the header color */
+    color: #ff6600;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -82,41 +154,7 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
-/* Featured Section */
-#featured {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-/* Resource List Layout */
-.resource-list {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.resource-item {
-    background-color: #444;
-    border: 2px solid #555;
-    padding: 20px;
-    width: 40%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
 /* Resource Categories */
-.resource-sections {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px 0;
-}
-
-/* Background adjustment for the resource category */
-.resource-category {
-    margin: 20px 0;
-}
-
 .resource-category h2 a {
     color: #ff6600;
     text-decoration: none;
@@ -126,24 +164,6 @@ nav ul li a:hover {
 
 .resource-category h2 a:hover {
     color: #ffd700;
-}
-
-/* PDF Container Styling */
-.resource-category iframe,
-.resource-category embed {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
-    height: 600px;  /* Default for large screens */
-}
-
-/* Responsive design for smaller screens (phones) */
-@media (max-width: 768px) {
-    .resource-category iframe,
-    .resource-category embed {
-        width: 100%;
-        height: 400px; /* Adjusted for smaller screens */
-    }
 }
 
 /* Guide Steps List */
@@ -169,7 +189,7 @@ nav ul li a:hover {
 
 /* Footer Styling */
 footer {
-    background-color: rgba(51, 51, 51, 0.8); /* Same opacity as header */
+    background-color: rgba(51, 51, 51, 0.9);  /* Semi-transparent dark footer */
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -178,10 +198,9 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 20px;  /* Space between navigation buttons */
+    gap: 20px;
 }
 
-/* Navigation Buttons in Footer */
 footer .nav-button {
     color: #ff6600;
     text-decoration: none;
@@ -197,43 +216,31 @@ footer .nav-button:hover {
     color: #fff;
 }
 
-/* General link styling for all states */
+/* General link styling */
 a {
-    color: #ff6600;  /* Orange for default link color */
+    color: #ff6600;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-a:visited {
-    color: #ff6600;  /* Ensures visited links remain orange */
-}
-
 a:hover {
-    color: #ffd700;  /* Yellow on hover */
+    color: #ffd700;
 }
 
 a:active {
-    color: #ff4500;  /* Slightly darker orange when the link is clicked */
+    color: #ff4500;
 }
 
-/* Add spacing between list items */
+/* Spacing between list items */
 .content ul > li {
-    margin-bottom: 20px; /* Adds space between each primary list item */
+    margin-bottom: 20px;
 }
 
-/* Add spacing between nested list items */
 .content ul ul > li {
-    margin-bottom: 10px; /* Adds smaller space between sub-items */
-}
-
-/* Add spacing to paragraphs inside list items */
-.content ul li p {
-    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 /* Style headers within tool details */
 .content h2 {
-    margin-top: 30px; /* Adds space above each section title */
-    margin-bottom: 10px;
+    margin-top: 30px;
 }
