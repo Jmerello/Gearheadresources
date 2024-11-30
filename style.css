@@ -1,63 +1,10 @@
-/* Mobile Portrait Mode */
-@media screen and (max-width: 768px) and (orientation: portrait) {
-    body {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 28px;
-        padding: 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .resource-item {
-        width: 90%;
-        margin: 10px 0;
-    }
-
-    .resource-category img {
-        width: 100px;
-        height: auto;
-    }
-
-    footer {
-        flex-direction: column;
-        padding: 15px 0;
-    }
-
-    footer .nav-button {
-        padding: 8px 10px;
-        font-size: 14px;
-    }
-}
-
-/* Optional: Very small screens (less than 480px) */
-@media screen and (max-width: 480px) {
-    header h1 {
-        font-size: 24px;
-    }
-
-    .resource-item {
-        padding: 15px;
-    }
-}
-
 /* General Body Styling */
 body {
     font-family: Arial, sans-serif;
     background: url('toolbox.jpg') no-repeat center center/cover;
-    background-size: cover;
-    background-attachment: fixed;
-    color: #fff;
+    background-size: cover;  /* Ensure background covers the whole page */
+    background-attachment: fixed;  /* Keeps the background fixed when scrolling */
+    color: #fff;  /* Set text color to white */
     margin: 0;
     padding: 0;
     display: flex;
@@ -65,7 +12,7 @@ body {
     height: 100vh;
 }
 
-/* Overlay for readability */
+/* Add overlay for better text readability */
 body::before {
     content: "";
     position: fixed;
@@ -73,20 +20,20 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);  /* 50% black overlay */
+    background: rgba(0, 0, 0, 0.5);  /* Black overlay with 50% opacity */
     z-index: -1;
 }
 
-/* Content section */
+/* Content section takes up available space */
 .content {
     flex-grow: 1;
     padding: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 50px; /* Prevents footer overlap */
 }
 
 /* Header Styling */
 header {
-    background-color: rgba(51, 51, 51, 0.8);  /* Dark semi-transparent background */
+    background-color: rgba(51, 51, 51, 0.8);  /* Semi-transparent background */
     padding: 20px 0;
     text-align: center;
 }
@@ -94,7 +41,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 36px;
-    color: #ff6600;  /* Bright orange */
+    color: #ff6600;  /* Bright orange for a bold look */
 }
 
 /* Navigation Bar */
@@ -111,14 +58,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ff6600;
+    color: #ff6600;  /* Consistent orange links */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ffd700;  /* Hover yellow */
+    color: #ffd700;  /* Bright yellow on hover */
 }
 
 /* Shop Section */
@@ -134,18 +81,8 @@ nav ul li a:hover {
 }
 
 /* Resource Items */
-.resource-item {
-    background-color: rgba(68, 68, 68, 0.9);  /* Semi-transparent dark gray */
-    border: 2px solid #555;
-    padding: 20px;
-    width: 40%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
 .resource-item h3 a {
-    color: #ff6600;
+    color: #ff6600;  /* Matches the header color */
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -154,7 +91,41 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
+/* Featured Section */
+#featured {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Resource List Layout */
+.resource-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.resource-item {
+    background-color: #444;
+    border: 2px solid #555;
+    padding: 20px;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 /* Resource Categories */
+.resource-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+
+/* Background adjustment for the resource category */
+.resource-category {
+    margin: 20px 0;
+}
+
 .resource-category h2 a {
     color: #ff6600;
     text-decoration: none;
@@ -189,7 +160,7 @@ nav ul li a:hover {
 
 /* Footer Styling */
 footer {
-    background-color: rgba(51, 51, 51, 0.9);  /* Semi-transparent dark footer */
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -198,9 +169,10 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 20px;  /* Space between navigation buttons */
 }
 
+/* Navigation Buttons in Footer */
 footer .nav-button {
     color: #ff6600;
     text-decoration: none;
@@ -216,31 +188,100 @@ footer .nav-button:hover {
     color: #fff;
 }
 
-/* General link styling */
+/* General link styling for all states */
 a {
-    color: #ff6600;
+    color: #ff6600;  /* Orange for default link color */
     text-decoration: none;
     transition: color 0.3s;
 }
 
+a:visited {
+    color: #ff6600;  /* Ensures visited links remain orange */
+}
+
 a:hover {
-    color: #ffd700;
+    color: #ffd700;  /* Yellow on hover */
 }
 
 a:active {
-    color: #ff4500;
+    color: #ff4500;  /* Slightly darker orange when the link is clicked */
 }
 
-/* Spacing between list items */
+/* Add spacing between list items */
 .content ul > li {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Adds space between each primary list item */
 }
 
+/* Add spacing between nested list items */
 .content ul ul > li {
+    margin-bottom: 10px; /* Adds smaller space between sub-items */
+}
+
+/* Add spacing to paragraphs inside list items */
+.content ul li p {
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 /* Style headers within tool details */
 .content h2 {
-    margin-top: 30px;
+    margin-top: 30px; /* Adds space above each section title */
+}
+
+/* Mobile Portrait Mode */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Adjust header */
+    header h1 {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    /* Stack navigation items vertically */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Adjust resource items */
+    .resource-item {
+        width: 90%;  /* Make items take more width */
+        margin: 10px 0;  /* Add space between items */
+    }
+
+    /* Resize images and logos */
+    .resource-category img {
+        width: 100px;  /* Smaller image size */
+        height: auto;
+    }
+
+    /* Adjust footer */
+    footer {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    footer .nav-button {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Optional: For very small screens (less than 480px) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .resource-item {
+        padding: 15px;
+    }
 }
