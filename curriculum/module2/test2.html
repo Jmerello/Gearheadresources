@@ -8,89 +8,88 @@
     <script>
         function calculateScore() {
             let score = 0;
-            let totalQuestions = 20;  // Counting all questions
+            let totalQuestions = 20;  // Total number of questions
             let incorrectQuestions = [];
 
-            // Preventative Maintenance Questions
-            // 1. Which of the following is essential in a preventative maintenance program?
-            let answer1 = document.querySelector('input[name="q1"]:checked')?.value;
-            if (answer1 === "detailed maintenance schedule") { score++; } else { incorrectQuestions.push("1"); }
+            // Question 1: Electrical protocol
+            let answer1 = document.querySelector('input[name="question1"]:checked')?.value;
+            if (answer1 === "B") { score++; } else { incorrectQuestions.push("1"); }
 
-            // 2. What is the purpose of lubrication in machine maintenance?
-            let answer2 = document.querySelector('input[name="q2"]:checked')?.value;
-            if (answer2 === "reduce friction and wear") { score++; } else { incorrectQuestions.push("2"); }
+            // Question 2: PPE required
+            let answer2 = document.querySelector('input[name="question2"]:checked')?.value;
+            if (answer2 === "C") { score++; } else { incorrectQuestions.push("2"); }
 
-            // 3. What should be checked regularly to ensure proper machine operation?
-            let answer3 = document.querySelector('input[name="q3"]:checked')?.value;
-            if (answer3 === "alignment of moving parts") { score++; } else { incorrectQuestions.push("3"); }
+            // Question 3: Vehicle lift safety
+            let answer3 = document.querySelector('input[name="question3"]:checked')?.value;
+            if (answer3 === "B") { score++; } else { incorrectQuestions.push("3"); }
 
-            // 4. When performing preventative maintenance, what is the first step?
-            let answer4 = document.querySelector('input[name="q4"]:checked')?.value;
-            if (answer4 === "consult the maintenance manual") { score++; } else { incorrectQuestions.push("4"); }
+            // Question 4: Slips, trips, falls prevention
+            let answer4 = document.querySelector('input[name="question4"]:checked')?.value;
+            if (answer4 === "True") { score++; } else { incorrectQuestions.push("4"); }
 
-            // 5. True or False: A clean machine runs more efficiently and lasts longer.
-            let answer5 = document.querySelector('input[name="q5"]:checked')?.value;
-            if (answer5 === "True") { score++; } else { incorrectQuestions.push("5"); }
+            // Question 5: Jewelry safety
+            let answer5 = document.querySelector('input[name="question5"]:checked')?.value;
+            if (answer5 === "False") { score++; } else { incorrectQuestions.push("5"); }
 
-            // 6. True or False: Checking the oil level in machines should be done weekly.
-            let answer6 = document.querySelector('input[name="q6"]:checked')?.value;
-            if (answer6 === "True") { score++; } else { incorrectQuestions.push("6"); }
+            // Question 6: Lifting techniques
+            let answer6 = document.querySelector('input[name="question6"]:checked')?.value;
+            if (answer6 === "B") { score++; } else { incorrectQuestions.push("6"); }
 
-            // 7. Which of the following is most likely to cause a machine failure?
-            let answer7 = document.querySelector('input[name="q7"]:checked')?.value;
-            if (answer7 === "neglecting regular inspections") { score++; } else { incorrectQuestions.push("7"); }
+            // Question 7: Fire safety
+            let answer7 = document.querySelector('input[name="question7"]:checked')?.value;
+            if (answer7 === "C") { score++; } else { incorrectQuestions.push("7"); }
 
-            // 8. What should be done after completing a routine check on a machine?
-            let answer8 = document.querySelector('input[name="q8"]:checked')?.value;
-            if (answer8 === "document the results") { score++; } else { incorrectQuestions.push("8"); }
+            // Question 8: Power tool maintenance
+            let answer8 = document.querySelector('input[name="question8"]:checked')?.value;
+            if (answer8 === "D") { score++; } else { incorrectQuestions.push("8"); }
 
-            // 9. True or False: Preventative maintenance programs can reduce downtime.
-            let answer9 = document.querySelector('input[name="q9"]:checked')?.value;
-            if (answer9 === "True") { score++; } else { incorrectQuestions.push("9"); }
+            // Question 9: Work area tidiness
+            let answer9 = document.querySelector('input[name="question9"]:checked')?.value;
+            if (answer9 === "A") { score++; } else { incorrectQuestions.push("9"); }
 
-            // 10. What is the main goal of preventative maintenance?
-            let answer10 = document.querySelector('input[name="q10"]:checked')?.value;
-            if (answer10 === "prevent unexpected failures") { score++; } else { incorrectQuestions.push("10"); }
+            // Question 10: Personal hygiene in the workshop
+            let answer10 = document.querySelector('input[name="question10"]:checked')?.value;
+            if (answer10 === "C") { score++; } else { incorrectQuestions.push("10"); }
 
-            // 11. Which of the following should be inspected regularly on machines?
-            let answer11 = document.querySelector('input[name="q11"]:checked')?.value;
-            if (answer11 === "safety guards") { score++; } else { incorrectQuestions.push("11"); }
+            // Question 11: PPE usage
+            let answer11 = document.querySelector('input[name="question11"]:checked')?.value;
+            if (answer11 === "B") { score++; } else { incorrectQuestions.push("11"); }
 
-            // 12. What is the best way to ensure proper lubrication of a machine?
-            let answer12 = document.querySelector('input[name="q12"]:checked')?.value;
-            if (answer12 === "use the correct lubricant and apply it at intervals") { score++; } else { incorrectQuestions.push("12"); }
+            // Question 12: Tool safety
+            let answer12 = document.querySelector('input[name="question12"]:checked')?.value;
+            if (answer12 === "C") { score++; } else { incorrectQuestions.push("12"); }
 
-            // 13. True or False: A regular cleaning schedule is part of a preventative maintenance program.
-            let answer13 = document.querySelector('input[name="q13"]:checked')?.value;
-            if (answer13 === "True") { score++; } else { incorrectQuestions.push("13"); }
+            // Question 13: Vehicle maintenance
+            let answer13 = document.querySelector('input[name="question13"]:checked')?.value;
+            if (answer13 === "A") { score++; } else { incorrectQuestions.push("13"); }
 
-            // 14. What should be checked in an air filter during maintenance?
-            let answer14 = document.querySelector('input[name="q14"]:checked')?.value;
-            if (answer14 === "clogging or damage") { score++; } else { incorrectQuestions.push("14"); }
+            // Question 14: Emergency exits
+            let answer14 = document.querySelector('input[name="question14"]:checked')?.value;
+            if (answer14 === "B") { score++; } else { incorrectQuestions.push("14"); }
 
-            // 15. True or False: It’s unnecessary to calibrate equipment as part of preventative maintenance.
-            let answer15 = document.querySelector('input[name="q15"]:checked')?.value;
-            if (answer15 === "False") { score++; } else { incorrectQuestions.push("15"); }
+            // Question 15: First aid
+            let answer15 = document.querySelector('input[name="question15"]:checked')?.value;
+            if (answer15 === "True") { score++; } else { incorrectQuestions.push("15"); }
 
-            // 16. What is the role of safety checks in preventative maintenance?
-            let answer16 = document.querySelector('input[name="q16"]:checked')?.value;
-            if (answer16 === "ensure worker safety") { score++; } else { incorrectQuestions.push("16"); }
+            // Question 16: Lifting heavy objects
+            let answer16 = document.querySelector('input[name="question16"]:checked')?.value;
+            if (answer16 === "A") { score++; } else { incorrectQuestions.push("16"); }
 
-            // 17. How often should a machine’s electrical system be inspected as part of preventative maintenance?
-            let answer17 = document.querySelector('input[name="q17"]:checked')?.value;
-            if (answer17 === "at least every 6 months") { score++; } else { incorrectQuestions.push("17"); }
+            // Question 17: Electrical grounding
+            let answer17 = document.querySelector('input[name="question17"]:checked')?.value;
+            if (answer17 === "D") { score++; } else { incorrectQuestions.push("17"); }
 
-            // 18. What type of preventive maintenance includes tasks like oil changes and filter replacements?
-            let answer18 = document.querySelector('input[name="q18"]:checked')?.value;
-            if (answer18 === "routine maintenance") { score++; } else { incorrectQuestions.push("18"); }
+            // Question 18: Workshop clothing
+            let answer18 = document.querySelector('input[name="question18"]:checked')?.value;
+            if (answer18 === "B") { score++; } else { incorrectQuestions.push("18"); }
 
-            // 19. Which of the following can prevent premature wear on moving parts?
-            let answer19 = document.querySelector('input[name="q19"]:checked')?.value;
-            if (answer19 === "proper alignment and lubrication") { score++; } else { incorrectQuestions.push("19"); }
+            // Question 19: Working with sharp tools
+            let answer19 = document.querySelector('input[name="question19"]:checked')?.value;
+            if (answer19 === "True") { score++; } else { incorrectQuestions.push("19"); }
 
-            // 20. What should be done if a maintenance task is missed?
-            let answer20 = document.querySelector('input[name="q20"]:checked')?.value;
-            if (answer20 === "schedule it as soon as possible") { score++; } else { incorrectQuestions.push("20"); }
+            // Question 20: Properly storing chemicals
+            let answer20 = document.querySelector('input[name="question20"]:checked')?.value;
+            if (answer20 === "C") { score++; } else { incorrectQuestions.push("20"); }
 
             let percentage = (score / totalQuestions) * 100;
 
@@ -98,50 +97,341 @@
         }
     </script>
 </head>
-<body>
-    <header>
-        <h1>First Year Apprentice Test 2</h1>
-    </header>
-    <main class="content">
-        <section>
-            <h2>Test 2: Preventative Maintenance</h2>
-        </section>
-
-        <section>
-            <h3>Instructions</h3>
-            <p>Answer the following questions based on Module 2: Preventative Maintenance. Each question has a multiple-choice or true/false format. Please review your answers carefully before submitting.</p>
-        </section>
-
-        <!-- Preventative Maintenance Questions -->
-        <section>
-            <h3>Preventative Maintenance Questions</h3>
-            <ol>
-                <li><strong>Which of the following is essential in a preventative maintenance program?</strong><br>
-                    <label><input type="radio" name="q1" value="detailed maintenance schedule"> Detailed maintenance schedule</label><br>
-                    <label><input type="radio" name="q1" value="basic toolset"> Basic toolset</label><br>
-                    <label><input type="radio" name="q1" value="unscheduled checks"> Unscheduled checks</label><br>
-                    <label><input type="radio" name="q1" value="infrequent inspections"> Infrequent inspections</label><br>
-                </li>
-
-                <li><strong>What is the purpose of lubrication in machine maintenance?</strong><br>
-                    <label><input type="radio" name="q2" value="reduce friction and wear"> Reduce friction and wear</label><br>
-                    <label><input type="radio" name="q2" value="attract dirt and dust"> Attract dirt and dust</label><br>
-                    <label><input type="radio" name="q2" value="increase friction"> Increase friction</label><br>
-                    <label><input type="radio" name="q2" value="prevent corrosion"> Prevent corrosion</label><br>
-                </li>
-
-                <!-- Add more questions as needed -->
-
-            </ol>
-        </section>
-
-        <section>
-            <button type="button" onclick="calculateScore()">Submit Test</button>
-        </section>
-    </main>
-    <footer>
-        <a href="../../firstyear.html" class="nav-button">First Year Apprentice</a>
-    </footer>
-</body>
+    <body>
+        <header>
+            <h1>First Year Apprentice Test 2: Preventative Maintenance</h1>
+        </header>
+            <main class="content">
+                <!-- Test Introduction -->
+                <section>
+                    <h2>Test Overview</h2>
+                    <p>This test covers the material from the "Preventative Maintenance" lesson. Answer the following questions to the best of your ability.</p>
+                </section>
+        
+                <!-- Test Questions -->
+                <section>
+                    <h3>Multiple Choice Questions</h3>
+                    <form action="#">
+                        <fieldset>
+                            <legend>1. What is the first step in performing preventative maintenance on a vehicle?</legend>
+                            <label>
+                                <input type="radio" name="question1" value="A"> A) Start by adjusting the driver's seat
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question1" value="B"> B) Make shure the engine is off and the vehicle is in park with the parking brake set
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question1" value="C"> C) Inspect the vehicle’s performance
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question1" value="D"> D) Check for signs of wear and tear
+                            </label><br>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>2. Which of the following is a key component of a preventative maintenance plan?</legend>
+                            <label>
+                                <input type="radio" name="question2" value="A"> A) Ignoring minor issues
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question2" value="B"> B) Only inspecting when it breaks down
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question2" value="C"> C) Scheduling regular inspections and servicing
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question2" value="D"> D) Reducing downtime by operating vehicles as long as possible
+                            </label><br>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>3. Preventative maintenance helps to:</legend>
+                            <label>
+                                <input type="radio" name="question3" value="A"> A) Increase energy consumption
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question3" value="B"> B) Reduce unexpected breakdowns and increase vehicle lifespan
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question3" value="C"> C) Increase repair costs
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question3" value="D"> D) Decrease productivity by stopping machines for regular maintenance
+                            </label><br>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>4. Which of the following is NOT typically part of a preventative maintenance checklist?</legend>
+                            <label>
+                                <input type="radio" name="question4" value="True"> True
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question4" value="False"> False
+                            </label><br>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>5. How often should equipment be inspected in a preventative maintenance program?</legend>
+                            <label>
+                                <input type="radio" name="question5" value="A"> A) Once a year
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question5" value="B"> B) Only when it breaks down
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question5" value="C"> C) Regularly according to the manufacturer's recommendations
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question5" value="D"> D) Every few months
+                            </label><br>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>6. Which of the following is essential for effective preventative maintenance?</legend>
+                            <label>
+                                <input type="radio" name="question6" value="A"> A) A clear and organized schedule
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question6" value="B"> B) Ignoring minor repairs
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question6" value="C"> C) Preventing the equipment from being serviced regularly
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question6" value="D"> D) Operating machinery beyond its service life
+                            </label><br>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>7. What should be done if an issue is detected during a routine inspection?</legend>
+                            <label>
+                                <input type="radio" name="question7" value="A"> A) Ignore it and continue working
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question7" value="B"> B) Report the issue and arrange for necessary repairs
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question7" value="C"> C) Wait until the next scheduled maintenance
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question7" value="D"> D) Continue to use the machine until it completely fails
+                            </label><br>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>8. Which of the following actions is part of maintaining a clean work environment?</legend>
+                            <label>
+                                <input type="radio" name="question8" value="A"> A) Regularly cleaning and organizing the workspace
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question8" value="B"> B) Allowing debris to accumulate for safety purposes
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question8" value="C"> C) Only cleaning when visible dirt is present
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question8" value="D"> D) Ignoring the workspace cleanliness
+                            </label><br>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>9. Why should parts and equipment be replaced during preventative maintenance?</legend>
+                            <label>
+                                <input type="radio" name="question9" value="A"> A) To improve the machine's efficiency and prevent failures
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question9" value="B"> B) To increase the machine's weight
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question9" value="C"> C) To reduce the machine's operating speed
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question9" value="D"> D) To make the machine harder to operate
+                            </label><br>
+                        </fieldset>
+        
+                        <fieldset>
+                            <legend>10. Which of the following is the most common reason for machinery failure?</legend>
+                            <label>
+                                <input type="radio" name="question10" value="A"> A) Lack of regular maintenance
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question10" value="B"> B) Overuse without inspection
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question10" value="C"> C) Environmental factors
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question10" value="D"> D) Incorrect operating procedures
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>11. What is the most effective way to ensure equipment stays in optimal condition?</legend>
+                            <label>
+                                <input type="radio" name="question11" value="A"> A) Rely on repairs when necessary
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question11" value="B"> B) Perform routine maintenance and inspections
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question11" value="C"> C) Only clean the equipment when it appears dirty
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question11" value="D"> D) Never service the equipment unless it completely breaks down
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>12. What is the primary goal of preventative maintenance?</legend>
+                            <label>
+                                <input type="radio" name="question12" value="A"> A) To delay equipment failures for as long as possible
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question12" value="B"> B) To minimize production output
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question12" value="C"> C) To reduce the risk of unexpected breakdowns and increase equipment reliability
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question12" value="D"> D) To increase downtime for equipment inspections
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>13. Which of the following actions is a preventative maintenance practice?</legend>
+                            <label>
+                                <input type="radio" name="question13" value="A"> A) Waiting until equipment fails before taking action
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question13" value="B"> B) Regularly lubricating moving parts to reduce friction
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question13" value="C"> C) Ignoring minor wear and tear
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question13" value="D"> D) Using equipment without performing any checks or inspections
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>14. What should you do if a machine is making unusual sounds during operation?</legend>
+                            <label>
+                                <input type="radio" name="question14" value="A"> A) Ignore the sound and continue using the machine
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question14" value="B"> B) Stop the machine and inspect it for potential issues
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question14" value="C"> C) Let the machine run to see if the sound goes away
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question14" value="D"> D) Continue to use it until it stops working
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>15. What is the role of an equipment log in a preventative maintenance program?</legend>
+                            <label>
+                                <input type="radio" name="question15" value="A"> A) To track when a machine is due for repairs
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question15" value="B"> B) To monitor the daily output of machines
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question15" value="C"> C) To record all maintenance and repairs performed on the equipment
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question15" value="D"> D) To calculate the total cost of production
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>16. Why is it important to follow the manufacturer's maintenance guidelines?</legend>
+                            <label>
+                                <input type="radio" name="question16" value="A"> A) To maintain the manufacturer's warranty and ensure optimal performance
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question16" value="B"> B) To increase the cost of maintenance and repairs
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question16" value="C"> C) To make the equipment less efficient
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question16" value="D"> D) To avoid using standard safety procedures
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>17. What is a potential consequence of neglecting regular preventative maintenance?</legend>
+                            <label>
+                                <input type="radio" name="question17" value="A"> A) Improved machine performance
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question17" value="B"> B) Reduced production costs and better output
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question17" value="C"> C) Increased risk of unexpected failures and costly repairs
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question17" value="D"> D) Longer equipment lifespan without need for repairs
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>18. What is the role of temperature monitoring in preventative maintenance?</legend>
+                            <label>
+                                <input type="radio" name="question18" value="A"> A) To ensure the equipment operates at a temperature that prevents overheating
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question18" value="B"> B) To make the equipment more efficient
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question18" value="C"> C) To track equipment performance for future analysis
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question18" value="D"> D) To ensure the equipment operates at the lowest possible temperature
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>19. Which of the following maintenance tasks should be performed before equipment is used?</legend>
+                            <label>
+                                <input type="radio" name="question19" value="A"> A) Checking for leaks, inspecting safety features, and testing controls
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question19" value="B"> B) Cleaning the exterior only
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question19" value="C"> C) Lubricating the equipment once it has been turned on
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question19" value="D"> D) Ignoring all checks and operating the equipment immediately
+                            </label><br>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>20. What is the best time to perform preventative maintenance on a machine?</legend>
+                            <label>
+                                <input type="radio" name="question20" value="A"> A) During peak production times
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question20" value="B"> B) Before the machine starts showing signs of failure
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question20" value="C"> C) After a major breakdown
+                            </label><br>
+                            <label>
+                                <input type="radio" name="question20" value="D"> D) Only when the machine is completely out of service
+                            </label><br>
+                        </fieldset>
+                </section>
+                <section>
+                    <button type="button" onclick="calculateScore()">Submit Test</button>
+                </section>
+            </main>
+        <footer>
+            <a href="../../firstyear.html" class="nav-button">First Year Apprentice</a>
+        </footer>
+    </body>
 </html>
-
