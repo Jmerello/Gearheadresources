@@ -8,28 +8,88 @@
     <script>
         function calculateScore() {
             let score = 0;
-            let totalQuestions = 5;  // Only counting multiple choice/true/false questions
+            let totalQuestions = 20;  // Total number of questions
             let incorrectQuestions = [];
 
-            // Question 1: Most important safety protocol
+            // Question 1: Electrical protocol
             let answer1 = document.querySelector('input[name="question1"]:checked')?.value;
-            if (answer1 === "B") { score++; } else { incorrectQuestions.push("Q1"); }
+            if (answer1 === "B") { score++; } else { incorrectQuestions.push("Question1"); }
 
-            // Question 2: PPE required at all times
+            // Question 2: PPE required
             let answer2 = document.querySelector('input[name="question2"]:checked')?.value;
-            if (answer2 === "C") { score++; } else { incorrectQuestions.push("Q2"); }
+            if (answer2 === "C") { score++; } else { incorrectQuestions.push("Question2"); }
 
             // Question 3: Vehicle lift safety
             let answer3 = document.querySelector('input[name="question3"]:checked')?.value;
-            if (answer3 === "B") { score++; } else { incorrectQuestions.push("Q3"); }
+            if (answer3 === "B") { score++; } else { incorrectQuestions.push("Question3"); }
 
-            // Question 4: Slips, trips, and falls prevention
+            // Question 4: Slips, trips, falls prevention
             let answer4 = document.querySelector('input[name="question4"]:checked')?.value;
-            if (answer4 === "True") { score++; } else { incorrectQuestions.push("Q4"); }
+            if (answer4 === "True") { score++; } else { incorrectQuestions.push("Question4"); }
 
-            // Question 5: Jewelry while working with machinery
+            // Question 5: Jewelry safety
             let answer5 = document.querySelector('input[name="question5"]:checked')?.value;
-            if (answer5 === "False") { score++; } else { incorrectQuestions.push("Q5"); }
+            if (answer5 === "False") { score++; } else { incorrectQuestions.push("Question5"); }
+
+            // Question 6: Lifting techniques
+            let answer6 = document.querySelector('input[name="question6"]:checked')?.value;
+            if (answer6 === "B") { score++; } else { incorrectQuestions.push("Question6"); }
+
+            // Question 7: Fire safety
+            let answer7 = document.querySelector('input[name="question7"]:checked')?.value;
+            if (answer7 === "C") { score++; } else { incorrectQuestions.push("Question7"); }
+
+            // Question 8: Power tool maintenance
+            let answer8 = document.querySelector('input[name="question8"]:checked')?.value;
+            if (answer8 === "D") { score++; } else { incorrectQuestions.push("Question8"); }
+
+            // Question 9: Work area tidiness
+            let answer9 = document.querySelector('input[name="question9"]:checked')?.value;
+            if (answer9 === "A") { score++; } else { incorrectQuestions.push("Question9"); }
+
+            // Question 10: Personal hygiene in the workshop
+            let answer10 = document.querySelector('input[name="question10"]:checked')?.value;
+            if (answer10 === "C") { score++; } else { incorrectQuestions.push("Question10"); }
+
+            // Question 11: PPE usage
+            let answer11 = document.querySelector('input[name="question11"]:checked')?.value;
+            if (answer11 === "B") { score++; } else { incorrectQuestions.push("Question11"); }
+
+            // Question 12: Tool safety
+            let answer12 = document.querySelector('input[name="question12"]:checked')?.value;
+            if (answer12 === "C") { score++; } else { incorrectQuestions.push("Question12"); }
+
+            // Question 13: Vehicle maintenance
+            let answer13 = document.querySelector('input[name="question13"]:checked')?.value;
+            if (answer13 === "A") { score++; } else { incorrectQuestions.push("Question13"); }
+
+            // Question 14: Emergency exits
+            let answer14 = document.querySelector('input[name="question14"]:checked')?.value;
+            if (answer14 === "B") { score++; } else { incorrectQuestions.push("Question14"); }
+
+            // Question 15: First aid
+            let answer15 = document.querySelector('input[name="question15"]:checked')?.value;
+            if (answer15 === "True") { score++; } else { incorrectQuestions.push("Question15"); }
+
+            // Question 16: Lifting heavy objects
+            let answer16 = document.querySelector('input[name="question16"]:checked')?.value;
+            if (answer16 === "A") { score++; } else { incorrectQuestions.push("Question16"); }
+
+            // Question 17: Electrical grounding
+            let answer17 = document.querySelector('input[name="question17"]:checked')?.value;
+            if (answer17 === "D") { score++; } else { incorrectQuestions.push("Question17"); }
+
+            // Question 18: Workshop clothing
+            let answer18 = document.querySelector('input[name="question18"]:checked')?.value;
+            if (answer18 === "B") { score++; } else { incorrectQuestions.push("Question18"); }
+
+            // Question 19: Working with sharp tools
+            let answer19 = document.querySelector('input[name="question19"]:checked')?.value;
+            if (answer19 === "True") { score++; } else { incorrectQuestions.push("Question19"); }
+
+            // Question 20: Properly storing chemicals
+            let answer20 = document.querySelector('input[name="question20"]:checked')?.value;
+            if (answer20 === "C") { score++; } else { incorrectQuestions.push("Question20"); }
 
             let percentage = (score / totalQuestions) * 100;
 
@@ -99,14 +159,8 @@
                             <input type="radio" name="question3" value="D"> D) Vehicle lifts are checked once every year.
                         </label><br>
                     </fieldset>
-                </form>
-            </section>
-    
-            <!-- True/False Questions -->
-            <section>
-                <h3>True/False Questions</h3>
-                <form action="#">
-                    <fieldset>
+
+                     <fieldset>
                         <legend>4. Slips, trips, and falls can be prevented by keeping floors clean and dry. (True/False)</legend>
                         <label>
                             <input type="radio" name="question4" value="True"> True
@@ -125,6 +179,260 @@
                             <input type="radio" name="question5" value="False"> False
                         </label><br>
                     </fieldset>
+    
+                    <fieldset>
+                        <legend>6. Which of the following is the correct lifting technique?</legend>
+                        <label>
+                            <input type="radio" name="question6" value="A"> A) Lifting with your back straight and legs bent
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question6" value="B"> B) Bending your knees and keeping your back straight while lifting
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question6" value="C"> C) Lifting with one hand while twisting your torso
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question6" value="D"> D) Lifting without any thought to posture
+                        </label><br>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>7. In the event of a fire, the first thing you should do is:</legend>
+                        <label>
+                            <input type="radio" name="question7" value="A"> A) Try to put it out with a fire extinguisher
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question7" value="B"> B) Call emergency services
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question7" value="C"> C) Evacuate the area and call for help
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question7" value="D"> D) Ignore it if the fire is small
+                        </label><br>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>8. Power tools should be inspected before use to ensure:</legend>
+                        <label>
+                            <input type="radio" name="question8" value="A"> A) They are clean
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question8" value="B"> B) They are plugged in properly
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question8" value="C"> C) They are in good working condition
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question8" value="D"> D) All of the above
+                        </label><br>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>9. Keeping your work area tidy helps to:</legend>
+                        <label>
+                            <input type="radio" name="question9" value="A"> A) Prevent accidents and improve efficiency
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question9" value="B"> B) Make the workplace look good
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question9" value="C"> C) Make more space for tools
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question9" value="D"> D) None of the above
+                        </label><br>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>10. When working with hazardous materials, you should:</legend>
+                        <label>
+                            <input type="radio" name="question10" value="A"> A) Wear PPE to prevent exposure
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question10" value="B"> B) Work without gloves if it’s a small amount
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question10" value="C"> C) Only use your hands if the material is not dangerous
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question10" value="D"> D) None of the above
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>11. Which type of fire extinguisher is used for electrical fires?</legend>
+                        <label>
+                            <input type="radio" name="question11" value="A"> A) Water fire extinguisher
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question11" value="B"> B) Foam fire extinguisher
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question11" value="C"> C) CO2 fire extinguisher
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question11" value="D"> D) Powder fire extinguisher
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>12. To prevent injuries when using hand tools, you should:</legend>
+                        <label>
+                            <input type="radio" name="question12" value="A"> A) Always use them as instructed
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question12" value="B"> B) Hold them firmly and use a secure grip
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question12" value="C"> C) Use the right tool for the job
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question12" value="D"> D) All of the above
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>13. To perform regular vehicle maintenance safely, you should always:</legend>
+                        <label>
+                            <input type="radio" name="question13" value="A"> A) Disconnect the vehicle battery
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question13" value="B"> B) Leave the engine running for easier access
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question13" value="C"> C) Use the correct tools and procedures
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question13" value="D"> D) Ignore any irregular sounds
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>14. In case of emergency, it is important to know:</legend>
+                        <label>
+                            <input type="radio" name="question14" value="A"> A) How to operate all equipment
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question14" value="B"> B) Where the emergency exits and equipment are located
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question14" value="C"> C) How to perform emergency procedures for medical incidents
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question14" value="D"> D) All of the above
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>15. First aid kits should be stocked with:</legend>
+                        <label>
+                            <input type="radio" name="question15" value="A"> A) Only bandages
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question15" value="B"> B) Only antiseptics
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question15" value="C"> C) A variety of supplies, including bandages and antiseptics
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question15" value="D"> D) None of the above
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>16. To lift a heavy object properly, you should:</legend>
+                        <label>
+                            <input type="radio" name="question16" value="A"> A) Lift with your legs, not your back
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question16" value="B"> B) Bend your back and twist while lifting
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question16" value="C"> C) Ask someone else to lift it for you
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question16" value="D"> D) Use your arms to lift it
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>17. Which of the following should be used for electrical work?</legend>
+                        <label>
+                            <input type="radio" name="question17" value="A"> A) Insulated tools
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question17" value="B"> B) Wooden sticks for insulation
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question17" value="C"> C) Metal tools
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question17" value="D"> D) None of the above
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>18. Which of the following is not considered appropriate for PPE in a workshop?</legend>
+                        <label>
+                            <input type="radio" name="question18" value="A"> A) Safety goggles
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question18" value="B"> B) Hearing protection
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question18" value="C"> C) Open-toed shoes
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question18" value="D"> D) Work gloves
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>19. Which of the following is the primary reason to keep tools clean and well-maintained?</legend>
+                        <label>
+                            <input type="radio" name="question19" value="A"> A) To ensure they last longer
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question19" value="B"> B) To make them easier to use and safer
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question19" value="C"> C) To improve their appearance
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question19" value="D"> D) None of the above
+                        </label><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>20. In case of an emergency involving a chemical spill, you should:</legend>
+                        <label>
+                            <input type="radio" name="question20" value="A"> A) Leave the area immediately and report it to your supervisor
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question20" value="B"> B) Try to clean it up yourself without gloves
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question20" value="C"> C) Ignore it if it's a small spill
+                        </label><br>
+                        <label>
+                            <input type="radio" name="question20" value="D"> D) None of the above
+                        </label><br>
+                    </fieldset>
+
+            </section>
+
+            <section>
+                <button type="button" onclick="calculateScore()">Submit Test</button>
+            </section>
+        </main>
+    <footer>
+        <a href="../../firstyear.html" class="nav-button">First Year Apprentice</a>
+    </footer>
+</body>
+</html>
+
+
                 </form>
             </section>
     
@@ -139,3 +447,4 @@
     </footer>
 </body>
 </html>
+
