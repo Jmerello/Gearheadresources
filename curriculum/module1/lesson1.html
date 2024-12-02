@@ -3,108 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Year Apprentice Test 1</title>
+    <title>First Year Apprentice</title>
     <link rel="stylesheet" href="../../style.css">
-    <script>
-        function calculateScore() {
-            let score = 0;
-            let totalQuestions = 0;
-            let incorrectQuestions = [];
-            
-            const questions = document.querySelectorAll('.question');
-            
-            questions.forEach((question, index) => {
-                totalQuestions++;
-                let correctAnswer = question.getAttribute('data-correct-answer');
-                let userAnswer = null;
-
-                if (question.querySelector('input[type="radio"]')) {
-                    const selectedOption = question.querySelector('input[type="radio"]:checked');
-                    if (selectedOption) {
-                        userAnswer = selectedOption.value;
-                    }
-                }
-
-                if (userAnswer && userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-                    score++;
-                } else {
-                    incorrectQuestions.push('Q' + (index + 1));
-                }
-            });
-
-            let percentage = (score / totalQuestions) * 100;
-
-            alert("Your score is: " + score + " out of " + totalQuestions + " (" + percentage.toFixed(2) + "%)\n\n" + 
-                "Incorrect Questions: " + incorrectQuestions.join(", "));
-        }
-    </script>
 </head>
 <body>
     <header>
-        <h1>First Year Apprentice Test 1</h1>
+        <h1>First Year Apprentice Lesson 1</h1>
     </header>
-    <main class="content">
-        <!-- Test Title -->
-        <section>
-            <h2>Test 1: Safety Protocols</h2>
-        </section>
-
-        <!-- Test Instructions -->
-        <section>
-            <h3>Instructions</h3>
-            <p>Answer the following questions. Each question is either multiple-choice or true/false. Review your answers before submitting.</p>
-        </section>
-
-        <!-- Safety Protocol Questions -->
-        <section class="question" data-correct-answer="true">
-            <h3>1. Is it important to wear Personal Protective Equipment (PPE) while working in a shop?</h3>
-            <input type="radio" name="q1" value="true"> True<br>
-            <input type="radio" name="q1" value="false"> False
-        </section>
-
-        <section class="question" data-correct-answer="slips">
-            <h3>2. Which of the following is a common hazard in the shop?</h3>
-            <input type="radio" name="q2" value="slips"> Slips, trips, and falls<br>
-            <input type="radio" name="q2" value="noise"> Noise pollution<br>
-            <input type="radio" name="q2" value="smoke"> Smoke<br>
-            <input type="radio" name="q2" value="heat"> Excessive heat
-        </section>
-
-        <section class="question" data-correct-answer="true">
-            <h3>3. Should you check the vehicle lift’s functionality regularly?</h3>
-            <input type="radio" name="q3" value="true"> True<br>
-            <input type="radio" name="q3" value="false"> False
-        </section>
-
-        <section class="question" data-correct-answer="false">
-            <h3>4. Is it acceptable to have food and drinks near the work area to avoid contamination?</h3>
-            <input type="radio" name="q4" value="true"> True<br>
-            <input type="radio" name="q4" value="false"> False
-        </section>
-
-        <section class="question" data-correct-answer="jackets">
-            <h3>5. Which of the following is considered proper attire for working in the shop?</h3>
-            <input type="radio" name="q5" value="jackets"> Jackets<br>
-            <input type="radio" name="q5" value="shorts"> Shorts<br>
-            <input type="radio" name="q5" value="loose clothing"> Loose clothing<br>
-            <input type="radio" name="q5" value="sandals"> Sandals
-        </section>
-
-        <section class="question" data-correct-answer="true">
-            <h3>6. Should you disconnect power sources before working on electrical components?</h3>
-            <input type="radio" name="q6" value="true"> True<br>
-            <input type="radio" name="q6" value="false"> False
-        </section>
-
-        <!-- Submit Section -->
-        <section>
-            <button type="button" onclick="calculateScore()">Submit Test</button>
-        </section>
-    </main>
+        <main class="content">
+            <!-- Lesson Title -->
+            <section>
+                <h2>Lesson 1: Safety Protocols</h2>
+            </section>
+    
+            <!-- Lesson Overview -->
+            <section>
+                <h3>Lesson Overview</h3>
+                <p>Safety is the foundation of any successful apprenticeship. This lesson covers essential shop safety protocols that every technician must follow to ensure a safe working environment.</p>
+            </section>
+    
+            <!-- Safety Protocols Content -->
+            <section>
+                <h3>Basic Shop Safety</h3>
+                <ul>
+                    <li><strong>Slips, Trips, and Falls:</strong> Keep floors clean and dry. Mark wet areas clearly and ensure tools and materials are stored safely.</li>
+                    <li><strong>Personal Protective Equipment (PPE):</strong> Always wear safety glasses, closed-toed shoes, gloves, and hearing protection when necessary.</li>
+                    <li><strong>Proper Attire:</strong> Avoid loose clothing or jewelry that could get caught in machinery. Always tie back long hair.</li>
+                </ul>
+            </section>
+    
+            <section>
+                <h3>Basic Electrical Safety</h3>
+                <ul>
+                    <li><strong>Electrical Awareness:</strong> Disconnect power sources before working on electrical components.</li>
+                    <li><strong>Hand Placement:</strong> Use insulated tools and avoid touching live circuits with bare hands.</li>
+                </ul>
+            </section>
+    
+            <section>
+                <h3>Work Area Tidiness</h3>
+                <ul>
+                    <li>Maintain a clean and organized workspace to prevent hazards.</li>
+                    <li>Dispose of waste materials properly and keep walkways clear.</li>
+                    <li>No food or open drinks in the work area to avoid contamination and accidents.</li>
+                </ul>
+            </section>
+    
+            <section>
+                <h3>Vehicle Lift Safety</h3>
+                <ul>
+                    <li>Ensure vehicles are properly secured on lifts before working underneath.</li>
+                    <li>No unauthorized personnel, including customers and visitors, are allowed under lifted vehicles.</li>
+                    <li>Regularly inspect lifts for wear and proper function.</li>
+                </ul>
+            </section>
+    
+            <!-- Practice Exercises -->
+            <section>
+                <h3>Practice Exercises</h3>
+                <p>Complete the following tasks to reinforce your understanding of safety protocols:</p>
+                <ol>
+                    <li>Identify three potential hazards in your current workspace and explain how to mitigate them.</li>
+                    <li>List the PPE required for different shop tasks and explain their importance.</li>
+                    <li>Demonstrate the correct procedure for securing a vehicle on a lift.</li>
+                </ol>
+            </section>
+        </main>
     <footer>
         <a href="../../firstyear.html" class="nav-button">First Year Apprentice</a>
         <a href="lesson2.html" class="nav-button">Next Lesson</a>
     </footer>
 </body>
 </html>
-
