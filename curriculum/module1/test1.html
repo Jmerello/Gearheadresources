@@ -5,125 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Year Apprentice - Test 1</title>
     <link rel="stylesheet" href="../../style.css">
+    <script>
+        function calculateScore() {
+            let score = 0;
+            let totalQuestions = 5;  // Only counting multiple choice/true/false questions
+            let incorrectQuestions = [];
+
+            // Question 1: Most important safety protocol
+            let answer1 = document.querySelector('input[name="question1"]:checked')?.value;
+            if (answer1 === "B") { score++; } else { incorrectQuestions.push("Q1"); }
+
+            // Question 2: PPE required at all times
+            let answer2 = document.querySelector('input[name="question2"]:checked')?.value;
+            if (answer2 === "C") { score++; } else { incorrectQuestions.push("Q2"); }
+
+            // Question 3: Vehicle lift safety
+            let answer3 = document.querySelector('input[name="question3"]:checked')?.value;
+            if (answer3 === "B") { score++; } else { incorrectQuestions.push("Q3"); }
+
+            // Question 4: Slips, trips, and falls prevention
+            let answer4 = document.querySelector('input[name="question4"]:checked')?.value;
+            if (answer4 === "True") { score++; } else { incorrectQuestions.push("Q4"); }
+
+            // Question 5: Jewelry while working with machinery
+            let answer5 = document.querySelector('input[name="question5"]:checked')?.value;
+            if (answer5 === "False") { score++; } else { incorrectQuestions.push("Q5"); }
+
+            let percentage = (score / totalQuestions) * 100;
+
+            alert("Your score: " + score + " out of " + totalQuestions + " (" + percentage.toFixed(2) + "%)\n\nIncorrect questions: " + incorrectQuestions.join(", "));
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>First Year Apprentice Test 1: Safety Protocols</h1>
     </header>
-        <main class="content">
-            <!-- Test Introduction -->
-            <section>
-                <h2>Test Overview</h2>
-                <p>This test covers the material from the "Safety Protocols" lesson. Answer the following questions to the best of your ability.</p>
-            </section>
+    <main class="content">
+        <!-- Test Introduction -->
+        <section>
+            <h2>Test Overview</h2>
+            <p>This test covers the material from the "Safety Protocols" lesson. Answer the following questions to the best of your ability.</p>
+        </section>
 
-            <!-- Test Questions -->
-            <section>
-                <h3>Multiple Choice Questions</h3>
-                <form action="#">
-                    <fieldset>
-                        <legend>1. What is the most important safety protocol when working with electrical components?</legend>
-                        <label>
-                            <input type="radio" name="question1" value="A"> A) Wear gloves
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question1" value="B"> B) Disconnect the power source
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question1" value="C"> C) Use insulated tools
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question1" value="D"> D) Ensure the work area is tidy
-                        </label><br>
-                    </fieldset>
+        <!-- Test Questions -->
+        <section>
+            <h3>Multiple Choice Questions</h3>
+            <form action="#">
+                <fieldset>
+                    <legend>1. What is the most important safety protocol when working with electrical components?</legend>
+                    <label>
+                        <input type="radio" name="question1" value="A"> A) Wear gloves
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question1" value="B"> B) Disconnect the power source
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question1" value="C"> C) Use insulated tools
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question1" value="D"> D) Ensure the work area is tidy
+                    </label><br>
+                </fieldset>
 
-                    <fieldset>
-                        <legend>2. What should be worn at all times in the shop?</legend>
-                        <label>
-                            <input type="radio" name="question2" value="A"> A) Shorts
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question2" value="B"> B) Open-toed shoes
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question2" value="C"> C) PPE (Personal Protective Equipment)
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question2" value="D"> D) Loose clothing
-                        </label><br>
-                    </fieldset>
+                <fieldset>
+                    <legend>2. What should be worn at all times in the shop?</legend>
+                    <label>
+                        <input type="radio" name="question2" value="A"> A) Shorts
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question2" value="B"> B) Open-toed shoes
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question2" value="C"> C) PPE (Personal Protective Equipment)
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question2" value="D"> D) Loose clothing
+                    </label><br>
+                </fieldset>
 
-                    <fieldset>
-                        <legend>3. When using a vehicle lift, which of the following is true?</legend>
-                        <label>
-                            <input type="radio" name="question3" value="A"> A) It’s okay to work under a vehicle without securing it on the lift.
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question3" value="B"> B) Only authorized personnel should be allowed under a lifted vehicle.
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question3" value="C"> C) Customers are allowed to stand under lifted vehicles if the technician is working.
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question3" value="D"> D) Vehicle lifts are checked once every year.
-                        </label><br>
-                    </fieldset>
-                </form>
-            </section>
+                <fieldset>
+                    <legend>3. When using a vehicle lift, which of the following is true?</legend>
+                    <label>
+                        <input type="radio" name="question3" value="A"> A) It’s okay to work under a vehicle without securing it on the lift.
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question3" value="B"> B) Only authorized personnel should be allowed under a lifted vehicle.
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question3" value="C"> C) Customers are allowed to stand under lifted vehicles if the technician is working.
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question3" value="D"> D) Vehicle lifts are checked once every year.
+                    </label><br>
+                </fieldset>
+            </form>
+        </section>
 
-            <!-- True/False Questions -->
-            <section>
-                <h3>True/False Questions</h3>
-                <form action="#">
-                    <fieldset>
-                        <legend>4. Slips, trips, and falls can be prevented by keeping floors clean and dry. (True/False)</legend>
-                        <label>
-                            <input type="radio" name="question4" value="True"> True
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question4" value="False"> False
-                        </label><br>
-                    </fieldset>
+        <!-- True/False Questions -->
+        <section>
+            <h3>True/False Questions</h3>
+            <form action="#">
+                <fieldset>
+                    <legend>4. Slips, trips, and falls can be prevented by keeping floors clean and dry. (True/False)</legend>
+                    <label>
+                        <input type="radio" name="question4" value="True"> True
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question4" value="False"> False
+                    </label><br>
+                </fieldset>
 
-                    <fieldset>
-                        <legend>5. It’s safe to wear jewelry while working with machinery, as long as it is secured. (True/False)</legend>
-                        <label>
-                            <input type="radio" name="question5" value="True"> True
-                        </label><br>
-                        <label>
-                            <input type="radio" name="question5" value="False"> False
-                        </label><br>
-                    </fieldset>
-                </form>
-            </section>
+                <fieldset>
+                    <legend>5. It’s safe to wear jewelry while working with machinery, as long as it is secured. (True/False)</legend>
+                    <label>
+                        <input type="radio" name="question5" value="True"> True
+                    </label><br>
+                    <label>
+                        <input type="radio" name="question5" value="False"> False
+                    </label><br>
+                </fieldset>
+            </form>
+        </section>
 
-            <!-- Short Answer Questions -->
-            <section>
-                <h3>Short Answer Questions</h3>
-                <form action="#">
-                    <fieldset>
-                        <legend>6. What is the proper procedure for securing a vehicle on a lift?</legend>
-                        <textarea rows="4" cols="50" name="question6" placeholder="Your answer here..."></textarea><br>
-                    </fieldset>
+        <!-- Submission Button -->
+        <section>
+            <button type="button" onclick="calculateScore()">Submit Test</button>
+        </section>
 
-                    <fieldset>
-                        <legend>7. Name three items that should be worn as part of PPE in the shop.</legend>
-                        <textarea rows="4" cols="50" name="question7" placeholder="Your answer here..."></textarea><br>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>8. List two things you should check before using a power tool.</legend>
-                        <textarea rows="4" cols="50" name="question8" placeholder="Your answer here..."></textarea><br>
-                    </fieldset>
-                </form>
-            </section>
-
-            <!-- Submission Button -->
-            <section>
-                <button type="submit" class="submit-btn">Submit Test</button>
-            </section>
-
-        </main>
+    </main>
     <footer>
         <a href="../../firstyear.html" class="nav-button">First Year Apprentice</a>
     </footer>
