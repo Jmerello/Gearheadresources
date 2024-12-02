@@ -94,6 +94,9 @@
             let percentage = (score / totalQuestions) * 100;
 
             alert("Your score: " + score + " out of " + totalQuestions + " (" + percentage.toFixed(2) + "%)\n\nIncorrect questions: " + incorrectQuestions.join(", "));
+
+             // Redirect user to firstyear.html after submitting
+            window.location.href = "../../firstyear.html";
         }
     </script>
 </head>
