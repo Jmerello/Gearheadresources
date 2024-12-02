@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Year Apprentice</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <header>
+        <h1>First Year Apprentice Lesson 4</h1>
+    </header>
+    <main class="content">
+        <!-- Lesson Title -->
+        <section>
+            <h2>Lesson 4: Oil and Fluid Maintenance</h2>
+        </section>
+
+        <!-- Lesson Overview -->
+        <section>
+            <h3>Lesson Overview</h3>
+            <p>In this lesson, we will explore the essential task of maintaining a vehicle's oils and fluids. Proper fluid management is crucial for engine performance and longevity.</p>
+        </section>
+
+        <!-- Oil Change Content -->
+        <section>
+            <h3>Engine Oil Change</h3>
+            <ul>
+                <li><strong>Tools Needed:</strong> Wrench, oil filter wrench, oil pan, funnel, new oil, and filter.</li>
+                <li><strong>Steps:</strong> Lift the vehicle, drain the old oil, replace the oil filter, and refill with fresh oil. Ensure you use the correct oil grade for the vehicle's specifications.</li>
+                <li><strong>Safety:</strong> Wear gloves to prevent skin contact with hot oil. Ensure the vehicle is securely lifted to avoid accidents.</li>
+            </ul>
+        </section>
+
+        <!-- Transmission Fluid Content -->
+        <section>
+            <h3>Transmission Fluid Maintenance</h3>
+            <ul>
+                <li><strong>Tools Needed:</strong> Wrench, funnel, transmission fluid, gloves.</li>
+                <li><strong>Steps:</strong> Locate the transmission dipstick, check the fluid level, and add the recommended transmission fluid if necessary. Make sure to follow the manufacturer's specifications for fluid type and quantity.</li>
+                <li><strong>Safety:</strong> Ensure the engine is off before opening the fluid reservoir. Be cautious with hot components around the transmission.</li>
+            </ul>
+        </section>
+
+        <!-- Brake Fluid Content -->
+        <section>
+            <h3>Brake Fluid Maintenance</h3>
+            <ul>
+                <li><strong>Tools Needed:</strong> Wrench, brake fluid, clean container, gloves.</li>
+                <li><strong>Steps:</strong> Locate the brake fluid reservoir, remove the cap, and check fluid levels. If necessary, top up with the correct brake fluid type.</li>
+                <li><strong>Safety:</strong> Be cautious not to spill brake fluid, as it can damage vehicle paint. Always dispose of old brake fluid properly.</li>
+            </ul>
+        </section>
+
+        <!-- Coolant Fluid Content -->
+        <section>
+            <h3>Engine Coolant Maintenance</h3>
+            <ul>
+                <li><strong>Tools Needed:</strong> Coolant, funnel, gloves.</li>
+                <li><strong>Steps:</strong> Check the coolant level in the radiator and coolant reservoir. Refill as needed with the appropriate coolant mixture (usually a 50/50 ratio of coolant to water).</li>
+                <li><strong>Safety:</strong> Never open the radiator cap when the engine is hot. Always allow the vehicle to cool before checking or adding coolant.</li>
+            </ul>
+        </section>
+
+        <!-- Practice Exercises -->
+        <section>
+            <h3>Practice Exercises</h3>
+            <p>Complete the following tasks to reinforce your understanding of oil and fluid maintenance:</p>
+            <ol>
+                <li>List the tools needed to perform an oil change and describe the steps involved.</li>
+                <li>Explain how to check and top up transmission fluid. Why is it important to use the correct fluid?</li>
+                <li>Identify the steps for maintaining brake fluid and coolant fluid, and explain why each is important for vehicle safety and performance.</li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <a href="lesson3.html" class="nav-button">Last Lesson</a>
+        <a href="../../firstyear.html" class="nav-button">First Year Apprentice</a>
+    </footer>
+</body>
+</html>
