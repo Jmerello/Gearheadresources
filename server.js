@@ -21,7 +21,7 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
 
 // Redirect root ('/') to '/login'
 app.get('/', (req, res) => {
-  res.redirect('/login'); // Redirect to login page
+  res.redirect('login'); // Redirect to login page
 });
 
 // Serve the login page when visiting '/login'
