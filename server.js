@@ -37,6 +37,14 @@ app.get('/forgot-password', (req, res) => {
 app.post('/signup', (req, res) => {
   const { username, password } = req.body;
 
+    // Handle Forgot Password (when the form is submitted)
+app.post('/forgot-password', (req, res) => {
+  const { email } = req.body;
+
+  // Placeholder: Logic to handle password reset
+  // In real-world scenarios, you would generate a token and send a reset email.
+  res.send(`Password reset instructions sent to ${email}`);
+
   // Check if the username already exists
   db.get('SELECT * FROM users WHERE username = ?', [username], (err, row) => {
     if (err) {
