@@ -46,7 +46,7 @@ app.post('/signup', (req, res) => {
 
     if (row) {
       // Username already exists
-      return res.status(400).send('Username already taken. Please choose a different one.');
+      return res.status(400).send('Username already exists. Please choose a different one or go to "forgot Password".');
     }
 
     // Hash the password before storing it
@@ -58,7 +58,7 @@ app.post('/signup', (req, res) => {
       // Insert the user into the database
       db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hash], (err) => {
         if (err) {
-          return res.status(500).send('Error saving user.');
+          return res.status(500).send('Error saving user. Please try again later');
         }
 
         res.send('Account created successfully! Please <a href="/login">log in</a>.');
