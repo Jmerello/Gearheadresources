@@ -37,7 +37,7 @@ db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, 
 
 // Redirect root ('/') to '/login'
 app.get('/', (req, res) => {
-  res.redirect('/login'); // Redirect to login page
+  res.redirect('/public/login'); // Redirect to login page
 });
 
 // Serve the login page
