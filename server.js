@@ -8,7 +8,7 @@ const path = require('path');
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));  // To parse form data
-app.use(express.static(path.join(__dirname))); // Serve static files from the root
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the root
 
 // Connect to SQLite database
 const db = new sqlite3.Database('./gearheadresources.db', (err) => {
@@ -19,14 +19,14 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
   }
 });
 
-// Serve the login page when visiting '/login'
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'login.html'));
-});
-
 // Redirect root ('/') to '/login'
 app.get('/', (req, res) => {
   res.redirect('/login'); // Redirect to login page
+});
+
+// Serve the login page when visiting '/login'
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 // Serve the signup page
