@@ -18,9 +18,19 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
     }
 });
 
-// Serve the login page
+// Serve the login page when visiting '/login'
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'login.html'));
+});
+
+// Redirect root ('/') to '/login'
+app.get('/', (req, res) => {
+  res.redirect('/login'); // Redirect to login page
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
 });
 
 // Serve the signup page
