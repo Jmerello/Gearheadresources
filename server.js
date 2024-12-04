@@ -23,15 +23,6 @@ app.use(session({
   cookie: { secure: false } // If you're not using HTTPS, keep this false
 }));
 
-// Middleware to check if the user is logged in
-function isAuthenticated(req, res, next) {
-  if (req.session && req.session.userId) {
-    return next();  // User is logged in, proceed to the next middleware
-  } else {
-    res.redirect('/login');  // Redirect to login page if not logged in
-  }
-}
-
 // Connect to SQLite database
 const db = new sqlite3.Database('./gearheadresources.db', (err) => {
   if (err) {
@@ -51,7 +42,7 @@ app.get('/', (req, res) => {
 
 // Serve the login page
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'login.html'));
+  res.sendFile(path.join(__dirname, 'public', 'login.html')); // Correct path to login.html
 });
 
 // Serve the signup page
@@ -121,14 +112,14 @@ app.post('/login', (req, res) => {
       req.session.userId = row.id; // Store the user ID in the session (or any other user data you want)
 
       // Redirect to the home page after successful login
-      res.redirect('/public/index'); // Change '/home' to whatever route you use for the home page
+      res.redirect('/public/index.html'); // Correct path to home page
     });
   });
 });
 
-// Serve the home page (Protected)
-app.get('/public/index', isAuthenticated, (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));  // Serve your actual home page HTML file
+// Serve the home page
+app.get('/public/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));  // Serve your actual home page HTML file
 });
 
 // Handle forgot password form submission (Placeholder)
