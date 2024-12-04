@@ -95,9 +95,15 @@ app.post('/login', (req, res) => {
         return res.status(400).json({ error: 'Invalid username or password.' });
       }
 
-      res.json({ message: 'Login successful!' });
+      // Redirect to the home page after successful login
+      res.redirect('/home'); // Change '/home' to whatever route you use for the home page
     });
   });
+});
+
+// Serve the home page
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));  // Serve your actual home page HTML file
 });
 
 // Handle forgot password form submission (Placeholder)
@@ -105,6 +111,17 @@ app.post('/forgot-password', (req, res) => {
   const { email } = req.body;
   res.send(`Password reset instructions sent to ${email}`);
 });
+
+app.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to log out.' });
+    }
+
+    res.redirect('/login');
+  });
+});
+
 
 // Start the server
 app.listen(port, () => {
