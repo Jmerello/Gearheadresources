@@ -2,13 +2,26 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcrypt');
 const path = require('path');
+const session = require('express-session'); // Add this line for session support
+
 const app = express();
 const port = 3000;
+
+// Use a secure session secret key
+const sessionSecret = '6b7b1c3c16f53b9b1cda75be7b9903a0ed582f6d43d242bcf35d1f90d5d9c1c0'; // This is a securely generated string
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // To parse form data
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the root
+
+// Session middleware
+app.use(session({
+  secret: sessionSecret, // Use the secure session key here
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // If you're not using HTTPS, keep this false
+}));
 
 // Connect to SQLite database
 const db = new sqlite3.Database('./gearheadresources.db', (err) => {
@@ -112,6 +125,7 @@ app.post('/forgot-password', (req, res) => {
   res.send(`Password reset instructions sent to ${email}`);
 });
 
+// Logout route
 app.get('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -121,7 +135,6 @@ app.get('/logout', (req, res) => {
     res.redirect('/login');
   });
 });
-
 
 // Start the server
 app.listen(port, () => {
