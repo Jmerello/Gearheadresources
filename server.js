@@ -17,10 +17,21 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
     }
 });
 
-// Basic route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html')); // Make sure index.html is in the root directory
+// Serve the login page
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login.html'));
 });
+
+// Serve the signup page
+app.get('/signup', (req, res) => {
+  res.sendFile(path.join(__dirname, 'signup.html'));
+});
+
+// Serve the forgot password page
+app.get('/forgot-password', (req, res) => {
+  res.sendFile(path.join(__dirname, 'forgot-password.html'));
+});
+
 
 // Start the server
 app.listen(port, () => {
