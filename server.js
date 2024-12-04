@@ -1,13 +1,13 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcrypt');
+const path = require('path');
 const app = express();
 const port = 3000;
-const path = require('path');
 
 // Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));  // To parse form data
+app.use(express.urlencoded({ extended: true })); // To parse form data
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the root
 
 // Connect to SQLite database
@@ -19,12 +19,15 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
   }
 });
 
+// Create users table if it doesn't exist
+db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)');
+
 // Redirect root ('/') to '/login'
 app.get('/', (req, res) => {
-  res.redirect('login'); // Redirect to login page
+  res.redirect('/login'); // Redirect to login page
 });
 
-// Serve the login page when visiting '/login'
+// Serve the login page
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'login.html'));
 });
@@ -40,45 +43,66 @@ app.get('/forgot-password', (req, res) => {
 });
 
 // Handle signup form submission
-app.post('/signup', (req, res) => {
+app.post('/signup', async (req, res) => {
   const { username, password } = req.body;
 
-  // Check if the username already exists
-  db.get('SELECT * FROM users WHERE username = ?', [username], (err, row) => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send('Error checking for existing username.');
-    }
-
-    if (row) {
-      // Username already exists
-      return res.status(400).send('Username already exists. Please choose a different one or go to "forgot Password".');
-    }
-
-    // Hash the password before storing it
-    bcrypt.hash(password, 10, (err, hash) => {
+  try {
+    // Check if the username already exists
+    db.get('SELECT * FROM users WHERE username = ?', [username], async (err, row) => {
       if (err) {
-        return res.status(500).send('Error hashing password.');
+        console.error(err);
+        return res.status(500).json({ error: 'Error checking for existing username.' });
       }
 
+      if (row) {
+        return res.status(400).json({ error: 'Username already exists. Please choose a different one or go to "forgot Password".' });
+      }
+
+      // Hash the password before storing it
+      const hashedPassword = await bcrypt.hash(password, 10);
+
       // Insert the user into the database
-      db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hash], (err) => {
+      db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], (err) => {
         if (err) {
-          return res.status(500).send('Error saving user. Please try again later.');
+          return res.status(500).json({ error: 'Error saving user. Please try again later.' });
         }
 
-        res.send('Account created successfully! Please <a href="/login">log in</a>.');
+        res.json({ message: 'Account created successfully! Please log in.' });
       });
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Server error during signup.' });
+  }
+});
+
+// Handle login form submission
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  // Fetch the user from the database
+  db.get('SELECT * FROM users WHERE username = ?', [username], (err, row) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error checking for existing username.' });
+    }
+
+    if (!row) {
+      return res.status(400).json({ error: 'Invalid username or password.' });
+    }
+
+    // Compare the entered password with the stored hash
+    bcrypt.compare(password, row.password, (err, result) => {
+      if (err || !result) {
+        return res.status(400).json({ error: 'Invalid username or password.' });
+      }
+
+      res.json({ message: 'Login successful!' });
     });
   });
 });
 
-// Handle forgot password form submission
+// Handle forgot password form submission (Placeholder)
 app.post('/forgot-password', (req, res) => {
   const { email } = req.body;
-
-  // Placeholder: Logic to handle password reset
-  // In a real-world scenario, you would generate a token and send a reset email.
   res.send(`Password reset instructions sent to ${email}`);
 });
 
