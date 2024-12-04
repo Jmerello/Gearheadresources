@@ -1,9 +1,44 @@
-project-folder/
-├── server.js               # Main Node.js server file
-├── public/
-│   ├── style.css           # Styles for your site
-│   └── script.js           # JavaScript files, if any
-├── login.html              # Login page
-├── signup.html             # Signup page
-├── forgot-password.html    # Forgot-password page
-└── gearheadresources.db    # Your database file
+gearheadresources/
+│
+├── public/                           # Public folder that serves web pages and assets
+│   ├── README.md                     # README for the public folder
+│   ├── curriculum/                   # Curriculum folder inside public
+│   │   ├── firstyear/                # First-year curriculum files
+│   │   ├── secondyear/               # Second-year curriculum files
+│   │   └── README.md                 # README for the curriculum
+│   │
+│   ├── images/                       # Image files inside public
+│   │   ├── adjustable_wrench.jpg     # Image file
+│   │   ├── autoASE.jpg               # Image file
+│   │   ├── collisionASE.jpg          # Image file
+│   │   ├── combo_wrench.jpg          # Image file
+│   │   └── (more images)             # Other image files
+│   │
+│   ├── pdf/                          # PDF files inside public
+│   │   ├── README.md                 # PDF folder README
+│   │   ├── autoASE.pdf               # PDF file for ASE exam
+│   │   ├── collisionASE.pdf          # PDF file for ASE exam
+│   │   ├── l1ASE.pdf                 # PDF file for L1 ASE
+│   │   └── (more PDFs)               # Other PDF files
+│   │
+│   ├── asecert.html                  # HTML page for ASE certification
+│   ├── contact_us.html               # HTML page for contact us
+│   ├── firstyear.html                # HTML page for first-year curriculum
+│   ├── forgot-password.html          # HTML page for password reset
+│   ├── index.html                    # Homepage HTML
+│   ├── linetech.html                 # HTML page for linetech
+│   ├── login.html                    # Login page
+│   ├── lubetech.html                 # HTML page for lubetech
+│   ├── mastertech.html               # HTML page for mastertech
+│   ├── resources.html                # Resources page
+│   ├── script.js                     # JavaScript file
+│   ├── secondyear.html               # HTML page for second-year curriculum
+│   ├── signup.html                   # Signup page
+│   ├── style.css                     # CSS stylesheet
+│   ├── training.html                 # HTML page for training
+│   ├── generateHash.js               # JavaScript file for password hashing
+│   └── (other public files)          # Other HTML, JS, or assets
+│
+├── server.js                         # Server logic
+├── package.json                      # Project metadata (dependencies)
+└── graphql/                          # GraphQL files (if any)
