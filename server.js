@@ -96,7 +96,7 @@ app.post('/login', (req, res) => {
       }
 
       // Redirect to the home page after successful login
-      res.redirect('index.html'); // Change '/home' to whatever route you use for the home page
+      res.redirect('/index'); // Change '/home' to whatever route you use for the home page
     });
   });
 });
