@@ -96,14 +96,14 @@ app.post('/login', (req, res) => {
       }
 
       // Redirect to the home page after successful login
-      res.redirect('/index'); // Change '/home' to whatever route you use for the home page
+      res.redirect('/public/index'); // Change '/home' to whatever route you use for the home page
     });
   });
 });
 
 // Serve the home page
-app.get('/index', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));  // Serve your actual home page HTML file
+app.get('/public/index', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));  // Serve your actual home page HTML file
 });
 
 // Handle forgot password form submission (Placeholder)
