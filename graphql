@@ -1,8 +1,6 @@
-gearheadresources/
-├── index.html        # Main HTML page
-├── app/              # Backend folder
-│   ├── db/           # Contains SQLite database file
-│   │   └── mydatabase.db
-│   └── scripts/      # Backend scripts
-│       └── database.php
-└── README.md
+project-folder/
+├── server.js
+├── public/
+│   └── styles.css
+├── login.html
+└── signup.html
