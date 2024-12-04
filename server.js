@@ -41,22 +41,22 @@ app.get('/', (req, res) => {
 });
 
 // Serve the login page
-app.get('/login', (req, res) => {
+app.get('/public/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html')); // Correct path to login.html
 });
 
 // Serve the signup page
-app.get('/signup', (req, res) => {
-  res.sendFile(path.join(__dirname, 'signup.html'));
+app.get('public/signup', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 });
 
 // Serve the forgot password page
-app.get('/forgot-password', (req, res) => {
-  res.sendFile(path.join(__dirname, 'forgot-password.html'));
+app.get('/public/forgot-password', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'forgot-password.html'));
 });
 
 // Handle signup form submission
-app.post('/signup', async (req, res) => {
+app.post('/public/signup', async (req, res) => {
   const { username, password } = req.body;
 
   try {
