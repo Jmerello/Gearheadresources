@@ -1,6 +1,5 @@
 project-folder/
 ├── server.js
-├── public/
-│   └── styles.css
+├── styles.css
 ├── login.html
 └── signup.html
