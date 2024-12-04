@@ -17,8 +17,10 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
 });
 
 // Basic route
+const path = require('path');
+
 app.get('/', (req, res) => {
-    res.send('Hello, Secure Login App!');
+  res.sendFile(path.join(__dirname, 'index.html')); // Make sure index.html is in the root directory
 });
 
 // Start the server
