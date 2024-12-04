@@ -1,5 +1,6 @@
 project-folder/
-├── server.js
-├── styles.css
-├── login.html
-└── signup.html
+├── server.js               # Your main Node.js server file
+├── styles.css              # Your CSS file for styling
+├── login.html              # Login page
+├── signup.html             # Signup page
+└── forgot-password.html    # Forgot-password page
