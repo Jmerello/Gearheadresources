@@ -9,4 +9,4 @@ Welcome to **GearheadResources**! This site provides tools, tips, and support fo
 ## How to Use
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/GearheadResources.git
+   git clone https://github.com/jmerello/gearheadresources.git
