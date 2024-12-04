@@ -89,7 +89,7 @@ app.post('/public/signup', async (req, res) => {
 });
 
 // Handle login form submission
-app.post('/login', (req, res) => {
+app.post('/public/login', (req, res) => {
   const { username, password } = req.body;
 
   // Fetch the user from the database
@@ -123,7 +123,7 @@ app.get('/public/index.html', (req, res) => {
 });
 
 // Handle forgot password form submission (Placeholder)
-app.post('/forgot-password', (req, res) => {
+app.post('/public/forgot-password', (req, res) => {
   const { email } = req.body;
   res.send(`Password reset instructions sent to ${email}`);
 });
@@ -136,7 +136,7 @@ app.get('/logout', (req, res) => {
     }
 
     // Redirect to the login page after successful logout
-    res.redirect('/login');
+    res.redirect('/public/login');
   });
 });
 
