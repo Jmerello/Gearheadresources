@@ -8,9 +8,7 @@ const path = require('path');
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));  // To parse form data
-
-// Serve static files (e.g., styles.css, images, etc.) from the 'public' folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); // Serve static files from the 'public' folder
 
 // Connect to SQLite database
 const db = new sqlite3.Database('./gearheadresources.db', (err) => {
