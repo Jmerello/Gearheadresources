@@ -11,11 +11,11 @@ app.use(express.urlencoded({ extended: true }));  // To parse form data
 
 // Connect to SQLite database
 const db = new sqlite3.Database('./gearheadresources.db', (err) => {
-    if (err) {
-        console.error(err.message);
-    } else {
-        console.log('Connected to the database.');
-    }
+  if (err) {
+    console.error(err.message);
+  } else {
+    console.log('Connected to the database.');
+  }
 });
 
 // Serve the login page when visiting '/login'
@@ -26,11 +26,6 @@ app.get('/login', (req, res) => {
 // Redirect root ('/') to '/login'
 app.get('/', (req, res) => {
   res.redirect('/login'); // Redirect to login page
-});
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
 });
 
 // Serve the signup page
@@ -46,14 +41,6 @@ app.get('/forgot-password', (req, res) => {
 // Handle signup form submission
 app.post('/signup', (req, res) => {
   const { username, password } = req.body;
-
-    // Handle Forgot Password (when the form is submitted)
-app.post('/forgot-password', (req, res) => {
-  const { email } = req.body;
-
-  // Placeholder: Logic to handle password reset
-  // In real-world scenarios, you would generate a token and send a reset email.
-  res.send(`Password reset instructions sent to ${email}`);
 
   // Check if the username already exists
   db.get('SELECT * FROM users WHERE username = ?', [username], (err, row) => {
@@ -76,7 +63,7 @@ app.post('/forgot-password', (req, res) => {
       // Insert the user into the database
       db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hash], (err) => {
         if (err) {
-          return res.status(500).send('Error saving user. Please try again later');
+          return res.status(500).send('Error saving user. Please try again later.');
         }
 
         res.send('Account created successfully! Please <a href="/login">log in</a>.');
@@ -85,7 +72,16 @@ app.post('/forgot-password', (req, res) => {
   });
 });
 
+// Handle forgot password form submission
+app.post('/forgot-password', (req, res) => {
+  const { email } = req.body;
+
+  // Placeholder: Logic to handle password reset
+  // In a real-world scenario, you would generate a token and send a reset email.
+  res.send(`Password reset instructions sent to ${email}`);
+});
+
 // Start the server
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+  console.log(`Server running at http://localhost:${port}/`);
 });
