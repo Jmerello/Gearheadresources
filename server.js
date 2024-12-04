@@ -37,26 +37,26 @@ db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, 
 
 // Redirect root ('/') to '/login'
 app.get('/', (req, res) => {
-  res.redirect('/public/login'); // Redirect to login page
+  res.redirect('/login'); // Redirect to login page
 });
 
 // Serve the login page
-app.get('/public/login', (req, res) => {
+app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html')); // Correct path to login.html
 });
 
 // Serve the signup page
-app.get('public/signup', (req, res) => {
+app.get('/signup', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'signup.html'));
 });
 
 // Serve the forgot password page
-app.get('/public/forgot-password', (req, res) => {
+app.get('/forgot-password', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'forgot-password.html'));
 });
 
 // Handle signup form submission
-app.post('/public/signup', async (req, res) => {
+app.post('/signup', async (req, res) => {
   const { username, password } = req.body;
 
   try {
@@ -89,7 +89,7 @@ app.post('/public/signup', async (req, res) => {
 });
 
 // Handle login form submission
-app.post('/public/login', (req, res) => {
+app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
   // Fetch the user from the database
@@ -112,18 +112,18 @@ app.post('/public/login', (req, res) => {
       req.session.userId = row.id; // Store the user ID in the session (or any other user data you want)
 
       // Redirect to the home page after successful login
-      res.redirect('/public/index.html'); // Correct path to home page
+      res.redirect('/index.html'); // Correct path to home page
     });
   });
 });
 
 // Serve the home page
-app.get('/public/index.html', (req, res) => {
+app.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));  // Serve your actual home page HTML file
 });
 
 // Handle forgot password form submission (Placeholder)
-app.post('/public/forgot-password', (req, res) => {
+app.post('/forgot-password', (req, res) => {
   const { email } = req.body;
   res.send(`Password reset instructions sent to ${email}`);
 });
@@ -136,7 +136,7 @@ app.get('/logout', (req, res) => {
     }
 
     // Redirect to the login page after successful logout
-    res.redirect('/public/login');
+    res.redirect('/login');
   });
 });
 
