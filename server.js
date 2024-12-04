@@ -9,6 +9,9 @@ const path = require('path');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));  // To parse form data
 
+// Serve static files (e.g., styles.css, images, etc.) from the 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Connect to SQLite database
 const db = new sqlite3.Database('./gearheadresources.db', (err) => {
   if (err) {
