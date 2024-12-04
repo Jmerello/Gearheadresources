@@ -1,6 +1,9 @@
 project-folder/
-├── server.js               # Your main Node.js server file
-├── styles.css              # Your CSS file for styling
+├── server.js               # Main Node.js server file
+├── public/
+│   ├── style.css           # Styles for your site
+│   └── script.js           # JavaScript files, if any
 ├── login.html              # Login page
 ├── signup.html             # Signup page
-└── forgot-password.html    # Forgot-password page
+├── forgot-password.html    # Forgot-password page
+└── gearheadresources.db    # Your database file
