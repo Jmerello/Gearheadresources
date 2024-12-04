@@ -1,4 +1,4 @@
-my-repository/
+gearheadresources/
 ├── index.html        # Main HTML page
 ├── app/              # Backend folder
 │   ├── db/           # Contains SQLite database file
