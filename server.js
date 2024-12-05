@@ -95,6 +95,77 @@ app.get('/logout', (req, res) => {
   });
 });
 
+// Serve the signup page
+app.get('/signup', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'signup.html')); // Correct path to signup.html
+});
+
+// Handle signup form submission
+app.post('/signup', (req, res) => {
+  const { username, password } = req.body;
+
+  // Check if the username already exists
+  db.get('SELECT * FROM users WHERE username = ?', [username], (err, row) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error checking for existing username.' });
+    }
+
+    if (row) {
+      return res.status(400).json({ error: 'Username already exists.' });
+    }
+
+    // Hash the password
+    bcrypt.hash(password, 10, (err, hashedPassword) => {
+      if (err) {
+        return res.status(500).json({ error: 'Error hashing password.' });
+      }
+
+      // Insert new user into the database
+      db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], function (err) {
+        if (err) {
+          return res.status(500).json({ error: 'Error saving user to database.' });
+        }
+
+        // Log the user in by storing user ID in the session
+        req.session.userId = this.lastID; // Store the user ID in the session
+
+        // Redirect to the homepage after successful signup
+        res.redirect('/');
+      });
+    });
+  });
+});
+
+// Serve the forgot-password page
+app.get('/forgot-password', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'forgot-password.html')); // Correct path to forgot-password.html
+});
+
+// Handle forgot-password form submission
+app.post('/forgot-password', (req, res) => {
+  const { username } = req.body;
+
+  // Check if the user exists
+  db.get('SELECT * FROM users WHERE username = ?', [username], (err, row) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error checking for username.' });
+    }
+
+    if (!row) {
+      return res.status(400).json({ error: 'No user found with that username.' });
+    }
+
+    // Generate a password reset token (this is just an example, use a better mechanism in production)
+    const resetToken = Math.random().toString(36).substr(2);
+
+    // Normally, you would send this token to the user via email, but for now, we’ll just log it
+    console.log(`Password reset token for ${username}: ${resetToken}`);
+
+    // Here you would send an email with the reset token (not implemented)
+    res.json({ message: 'Password reset link sent to your email.' });
+  });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
