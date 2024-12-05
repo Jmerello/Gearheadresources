@@ -61,13 +61,21 @@
             .then(response => response.json())
             .then(data => {
                 if (data.loggedIn) {
-                    // Show logged-in elements
+                    // Show logged-in elements, hide others
                     document.getElementById('login-item').style.display = 'none';
                     document.getElementById('logout-item').style.display = 'block';
+                    document.getElementById('home-item').style.display = 'block';
+                    document.getElementById('training-item').style.display = 'block';
+                    document.getElementById('resources-item').style.display = 'block';
+                    document.getElementById('contact-item').style.display = 'block';
                 } else {
-                    // Show logged-out elements
+                    // Show logged-out elements, hide others
                     document.getElementById('login-item').style.display = 'block';
                     document.getElementById('logout-item').style.display = 'none';
+                    document.getElementById('home-item').style.display = 'none';
+                    document.getElementById('training-item').style.display = 'none';
+                    document.getElementById('resources-item').style.display = 'none';
+                    document.getElementById('contact-item').style.display = 'none';
                 }
             });
     </script>
