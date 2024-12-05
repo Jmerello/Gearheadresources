@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Year Journeyman Technician</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Second Year Journeyman Technician Training</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="training.html">Training</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="curriculum">
+        <h2>Module 1: Advanced Automotive Diagnostics</h2>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year2/module1/lesson1.html">Advanced Engine Diagnostics</a></li></h3>
+            <p>Learn advanced diagnostic strategies for diagnosing engine performance issues in modern vehicles.</p>
+            <ul>
+                <li>Engine performance tuning</li>
+                <li>Fuel and ignition system troubleshooting</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year2/module1/lesson2.html">Transmission Control Diagnostics</a></li></h3>
+            <p>Specialized diagnostics for automatic transmission control systems.</p>
+            <ul>
+                <li>Transmission ECU failures</li>
+                <li>Recalibration of transmission systems</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="curriculum">
+        <h2>Module 2: Electric & Hybrid Vehicle Systems</h2>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year2/module2/lesson3.html">Battery Management Systems (BMS)</a></li></h3>
+            <p>Learn to diagnose and repair high-voltage battery management systems in electric and hybrid vehicles.</p>
+            <ul>
+                <li>Battery charging/discharge cycles</li>
+                <li>Battery pack diagnostics</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year2/module2/lesson4.html">Electric Motor Diagnostics & Repair</a></li></h3>
+            <p>Diagnosing and repairing electric motors in hybrid and fully electric vehicles.</p>
+            <ul>
+                <li>Electric motor fault detection</li>
+                <li>Rebuilding and repairing electric motors</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="curriculum">
+        <h2>Module 3: Advanced Maintenance & Repairs</h2>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year2/module3/lesson5.html">Advanced Brake System Diagnostics</a></li></h3>
+            <p>Specialized techniques for diagnosing and repairing modern braking systems (e.g., ABS, EBD, and autonomous systems).</p>
+            <ul>
+                <li>Diagnosing ABS and ESC faults</li>
+                <li>Braking system recalibration</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year2/module3/lesson6.html">Advanced HVAC System Repair</a></li></h3>
+            <p>Repairing modern HVAC systems in vehicles, including climate control and air conditioning systems.</p>
+            <ul>
+                <li>Diagnosing HVAC issues</li>
+                <li>Repairing electronic climate control systems</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="curriculum">
+        <h2>Module 4: Leadership & Technician Management</h2>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year2/module4/lesson7.html">Managing Technicians & Shop Operations</a></li></h3>
+            <p>Learn management skills to supervise a team of technicians and run an efficient service shop.</p>
+            <ul>
+                <li>Technician scheduling and task delegation</li>
+                <li>Inventory management and ordering</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Journeyman Technician Training</p>
+    </footer>
+</body>
+</html>
