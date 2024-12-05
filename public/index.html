@@ -56,29 +56,33 @@
     </footer>
 
     <script>
-        // Check if the user is logged in by calling the check-login route
-        fetch('/check-login')
-            .then(response => response.json())
-            .then(data => {
-                if (data.loggedIn) {
-                    // Show logged-in elements, hide others
-                    document.getElementById('login-item').style.display = 'none';
-                    document.getElementById('logout-item').style.display = 'block';
-                    document.getElementById('home-item').style.display = 'block';
-                    document.getElementById('training-item').style.display = 'block';
-                    document.getElementById('resources-item').style.display = 'block';
-                    document.getElementById('contact-item').style.display = 'block';
-                } else {
-                    // Show logged-out elements, hide others
-                    document.getElementById('login-item').style.display = 'block';
-                    document.getElementById('logout-item').style.display = 'none';
-                    document.getElementById('home-item').style.display = 'none';
-                    document.getElementById('training-item').style.display = 'none';
-                    document.getElementById('resources-item').style.display = 'none';
-                    document.getElementById('contact-item').style.display = 'none';
-                }
-            });
-    </script>
+    // Check if the user is logged in by calling the check-login route
+    fetch('/check-login')
+        .then(response => response.json())
+        .then(data => {
+            const links = document.querySelectorAll('nav ul li a'); // Get all <a> elements inside the <nav>
+
+            if (data.loggedIn) {
+                // Show logged-in elements
+                document.getElementById('login-item').style.display = 'none';
+                document.getElementById('logout-item').style.display = 'block';
+
+                // Make links visible
+                links.forEach(link => {
+                    link.style.display = 'block'; // Show all the links
+                });
+            } else {
+                // Show logged-out elements
+                document.getElementById('login-item').style.display = 'block';
+                document.getElementById('logout-item').style.display = 'none';
+
+                // Hide all the links
+                links.forEach(link => {
+                    link.style.display = 'none'; // Hide all the links
+                });
+            }
+        });
+</script>
 </body>
 </html>
 
