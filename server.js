@@ -35,6 +35,32 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
 // Create users table if it doesn't exist
 db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)');
 
+// Hash existing passwords in the database (run this once)
+db.all('SELECT * FROM users', [], (err, rows) => {
+  if (err) {
+    console.error(err.message);
+    return;
+  }
+
+  rows.forEach((user) => {
+    bcrypt.hash(user.password, 10, (err, hashedPassword) => {
+      if (err) {
+        console.error('Error hashing password:', err);
+        return;
+      }
+
+      // Update the password in the database with the hashed password
+      db.run('UPDATE users SET password = ? WHERE id = ?', [hashedPassword, user.id], (err) => {
+        if (err) {
+          console.error('Error updating password in database:', err);
+        } else {
+          console.log(`Password for user ${user.username} has been updated.`);
+        }
+      });
+    });
+  });
+});
+
 // Serve the root page (/) and index.html regardless of login status
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -120,7 +146,7 @@ app.post('/signup', (req, res) => {
         return res.status(500).json({ error: 'Error hashing password.' });
       }
 
-      // Insert new user into the database
+      // Insert new user into the database with hashed password
       db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], function (err) {
         if (err) {
           return res.status(500).json({ error: 'Error saving user to database.' });
@@ -168,5 +194,5 @@ app.post('/forgot-password', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(Server running at http://localhost:${port}/);
+  console.log(`Server running at http://localhost:${port}/`);
 });
