@@ -81,7 +81,6 @@ app.get('/login', (req, res) => {
 });
 
 // Handle login form submission
-// Handle login form submission
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
@@ -92,32 +91,27 @@ app.post('/login', (req, res) => {
     }
 
     if (!row) {
-      // If no user found, send error
       return res.status(400).json({ error: 'Invalid username or password.' });
     }
 
     // Compare the entered password with the stored hash
     bcrypt.compare(password, row.password, (err, result) => {
       if (err) {
-        // Handle bcrypt comparison errors
-        return res.status(500).json({ error: 'Error comparing passwords.' });
+        return res.status(500).json({ error: 'Error comparing password.' });
       }
 
+      console.log('Password comparison result:', result);  // Log to check if the comparison is happening correctly
+
       if (!result) {
-        // If password doesn't match, return error
         return res.status(400).json({ error: 'Invalid username or password.' });
       }
 
-      // Store the user ID in the session
-      req.session.userId = row.id; // Store the user ID in the session
-
-      // Redirect to the homepage after successful login
-      res.redirect('/');  // Or wherever you'd like to redirect after successful login
+      // Store the user information in the session
+      req.session.userId = row.id;  // Store the user ID in the session
+      res.redirect('/');  // Redirect to the homepage or dashboard after successful login
     });
   });
 });
-
-
 
 // Handle logout
 app.get('/logout', (req, res) => {
