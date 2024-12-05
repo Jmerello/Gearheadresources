@@ -35,8 +35,8 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
   }
 });
 
-// Create users table if it doesn't exist
-db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)');
+// Create users table if it doesn't exist, with an `isAdmin` field
+db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT, isAdmin BOOLEAN DEFAULT 0)');
 
 // Serve the root page (`/`) and `index.html` regardless of login status
 app.get('/', (req, res) => {
@@ -62,7 +62,6 @@ app.get('/admin', (req, res) => {
     });
   });
 });
-
 
 // Check if user is logged in
 app.get('/check-login', (req, res) => {
@@ -100,6 +99,7 @@ app.post('/login', (req, res) => {
 
       // Store the user information in the session
       req.session.userId = row.id; // Store the user ID in the session (or any other user data you want)
+      req.session.isAdmin = row.isAdmin; // Store admin status in the session
 
       console.log('User logged in:', req.session.userId); // Log for debugging
 
@@ -128,7 +128,7 @@ app.get('/signup', (req, res) => {
 
 // Handle signup form submission
 app.post('/signup', (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, isAdmin } = req.body;
 
   // Check if the username already exists
   db.get('SELECT * FROM users WHERE username = ?', [username], (err, row) => {
@@ -147,13 +147,14 @@ app.post('/signup', (req, res) => {
       }
 
       // Insert new user into the database
-      db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], function (err) {
+      db.run('INSERT INTO users (username, password, isAdmin) VALUES (?, ?, ?)', [username, hashedPassword, isAdmin || 0], function (err) {
         if (err) {
           return res.status(500).json({ error: 'Error saving user to database.' });
         }
 
         // Log the user in by storing user ID in the session
         req.session.userId = this.lastID; // Store the user ID in the session
+        req.session.isAdmin = isAdmin || 0; // Store admin status in the session
 
         console.log('New user signed up:', req.session.userId); // Log for debugging
 
@@ -198,4 +199,3 @@ app.post('/forgot-password', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
-
