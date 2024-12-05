@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Year Journeyman Technician</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>First Year Journeyman Technician Training</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="training.html">Training</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="curriculum">
+        <h2>Module 1: Advanced Diagnostic Skills</h2>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year1/module1/lesson1.html">Advanced Scan Tool Operation</a></li></h3>
+            <p>Mastering advanced automotive diagnostic tools (e.g., Oscilloscopes, Snap-on scanners) for diagnosing complex issues in modern vehicles.</p>
+            <ul>
+                <li>DTC interpretation</li>
+                <li>Live data analysis</li>
+                <li>Use of special functions in scanners</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year1/module1/lesson2.html">Advanced Electrical Diagnostics</a></li></h3>
+            <p>Learn to troubleshoot high-voltage electrical systems and circuits in both traditional and electric vehicles.</p>
+            <ul>
+                <li>Circuit diagrams</li>
+                <li>Power distribution systems</li>
+                <li>Component failure analysis</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="curriculum">
+        <h2>Module 2: Specialized Certifications</h2>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year1/module2/lesson3.html">ASE Certification – Advanced Areas</a></li></h3>
+            <p>Work toward completing additional ASE certifications (e.g., engine performance, advanced diagnostics, or specific system certifications).</p>
+            <ul>
+                <li>Emission systems, ignition, fuel, and electrical systems</li>
+                <li>Advanced diagnostic troubleshooting skills</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year1/module2/lesson4.html">Hybrid/Electric Vehicle Certification</a></li></h3>
+            <p>Specialized certification for working on hybrid and electric vehicle systems.</p>
+            <ul>
+                <li>Hybrid system architecture</li>
+                <li>High-voltage system diagnostics</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="curriculum">
+        <h2>Module 3: Specialized Repair Techniques</h2>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year1/module3/lesson5.html">Advanced Transmission Diagnosis & Repair</a></li></h3>
+            <p>In-depth understanding of automatic and manual transmission systems, including servicing, diagnosing, and repairing.</p>
+            <ul>
+                <li>Transmission removal</li>
+                <li>Disassembly and rebuild processes</li>
+                <li>Inspection and repair</li>
+            </ul>
+        </div>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year1/module3/lesson6.html">Turbocharged and Supercharged Systems</a></li></h3>
+            <p>Diagnosing, repairing, and tuning forced induction systems.</p>
+            <ul>
+                <li>Supercharger installation</li>
+                <li>Tuning and boosting performance</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="curriculum">
+        <h2>Module 4: Technological Advancements & Tools</h2>
+        <div class="module">
+            <h3><li><a href="curriculum/journeyman/year1/module4/lesson7.html">OBD-III & CAN Bus Diagnostics</a></li></h3>
+            <p>Advanced diagnostic techniques with OBD-III and CAN Bus systems for modern vehicles.</p>
+            <ul>
+                <li>OBD-III data analysis</li>
+                <li>CAN Bus fault detection</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Journeyman Technician Training</p>
+    </footer>
+</body>
+</html>
