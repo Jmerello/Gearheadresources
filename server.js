@@ -20,7 +20,10 @@ app.use(session({
   secret: sessionSecret,
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // Set to true if you're using HTTPS
+  cookie: { 
+    secure: false, // Set to true if you're using HTTPS in production
+    maxAge: 24 * 60 * 60 * 1000  // Session expires after 1 day (24 hours)
+  }
 }));
 
 // Connect to SQLite database
@@ -77,6 +80,8 @@ app.post('/login', (req, res) => {
       // Store the user information in the session
       req.session.userId = row.id; // Store the user ID in the session (or any other user data you want)
 
+      console.log('User logged in:', req.session.userId); // Log for debugging
+
       // Stay on the homepage after successful login (no redirect)
       res.redirect('/');
     });
@@ -129,6 +134,8 @@ app.post('/signup', (req, res) => {
         // Log the user in by storing user ID in the session
         req.session.userId = this.lastID; // Store the user ID in the session
 
+        console.log('New user signed up:', req.session.userId); // Log for debugging
+
         // Redirect to the homepage after successful signup
         res.redirect('/');
       });
@@ -170,3 +177,4 @@ app.post('/forgot-password', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
+
