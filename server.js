@@ -81,6 +81,7 @@ app.get('/login', (req, res) => {
 });
 
 // Handle login form submission
+// Handle login form submission
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
@@ -91,23 +92,32 @@ app.post('/login', (req, res) => {
     }
 
     if (!row) {
+      // If no user found, send error
       return res.status(400).json({ error: 'Invalid username or password.' });
     }
 
     // Compare the entered password with the stored hash
     bcrypt.compare(password, row.password, (err, result) => {
-      if (err || !result) {
+      if (err) {
+        // Handle bcrypt comparison errors
+        return res.status(500).json({ error: 'Error comparing passwords.' });
+      }
+
+      if (!result) {
+        // If password doesn't match, return error
         return res.status(400).json({ error: 'Invalid username or password.' });
       }
 
-      // Store the user information in the session
-      req.session.userId = row.id; // Store the user ID in the session (or any other user data you want)
+      // Store the user ID in the session
+      req.session.userId = row.id; // Store the user ID in the session
 
-      // Stay on the homepage after successful login (no redirect)
-      res.redirect('/');
+      // Redirect to the homepage after successful login
+      res.redirect('/');  // Or wherever you'd like to redirect after successful login
     });
   });
 });
+
+
 
 // Handle logout
 app.get('/logout', (req, res) => {
@@ -116,10 +126,14 @@ app.get('/logout', (req, res) => {
       return res.status(500).json({ error: 'Failed to log out.' });
     }
 
-    // Stay on the homepage after successful logout (no redirect)
+    // Clear the session cookie (make sure it's the same name as the session cookie)
+    res.clearCookie('connect.sid'); // 'connect.sid' is the default session cookie name.
+
+    // Redirect to homepage or login page
     res.redirect('/');
   });
 });
+
 
 // Serve the signup page
 app.get('/signup', (req, res) => {
