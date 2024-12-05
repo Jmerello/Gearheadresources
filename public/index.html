@@ -56,16 +56,26 @@
     </footer>
 
     <script>
-        // Check if the user is logged in by checking the session
-        fetch('/check-login', { method: 'GET' })
+        // Check if the user is logged in by calling the check-login route
+        fetch('/check-login')
             .then(response => response.json())
             .then(data => {
                 if (data.loggedIn) {
-                    document.getElementById('login-item').style.display = 'none';
-                    document.getElementById('logout-item').style.display = 'block';
+                    // Show logged-in elements
+                    document.getElementById('login-button').style.display = 'none';
+                    document.getElementById('logout-button').style.display = 'block';
+                    document.getElementById('home-link').style.display = 'block';
+                    document.getElementById('training-link').style.display = 'block';
+                    document.getElementById('resources-link').style.display = 'block';
+                    document.getElementById('contact-link').style.display = 'block';
                 } else {
-                    document.getElementById('login-item').style.display = 'block';
-                    document.getElementById('logout-item').style.display = 'none';
+                    // Show logged-out elements
+                    document.getElementById('login-button').style.display = 'block';
+                    document.getElementById('logout-button').style.display = 'none';
+                    document.getElementById('home-link').style.display = 'none';
+                    document.getElementById('training-link').style.display = 'none';
+                    document.getElementById('resources-link').style.display = 'none';
+                    document.getElementById('contact-link').style.display = 'none';
                 }
             });
     </script>
