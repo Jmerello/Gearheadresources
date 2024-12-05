@@ -57,7 +57,7 @@
 
     <script>
         // Check if the user is logged in by calling the check-login route
-        fetch('..//check-login')
+        fetch('../check-login')
             .then(response => response.json())
             .then(data => {
                 if (data.loggedIn) {
