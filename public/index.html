@@ -11,28 +11,29 @@
         <h1>GearheadResources</h1>
         <nav>
             <ul>
-                 <li>
-                    <form action="/login" method="GET">
+                <!-- The login/logout buttons will toggle based on login status -->
+                <li id="login-item">
+                    <form action="/login" method="GET" id="login-form">
                         <button type="submit">Log In</button>
+                    </form>
+                </li>
+                <li id="logout-item" style="display: none;">
+                    <form action="/logout" method="GET" id="logout-form">
+                        <button type="submit">Log Out</button>
                     </form>
                 </li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="training.html">Training</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="contact_us.html">Contact Us</a></li>
-                <li>
-                    <form action="/logout" method="GET">
-                        <button type="submit">Log Out</button>
-                    </form>
-                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="shop">
-            <s2>Your Go-To Resource for Auto Enthusiasts</s2>
-            <p>Tools and guidance to increase you skills.</p>
+            <h2>Your Go-To Resource for Auto Enthusiasts</h2>
+            <p>Tools and guidance to increase your skills.</p>
         </section>
 
         <section id="featured">
@@ -53,5 +54,21 @@
     <footer>
         <p>&copy; 2024 GearheadResources. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Check if the user is logged in by checking the session
+        fetch('/check-login', { method: 'GET' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.loggedIn) {
+                    document.getElementById('login-item').style.display = 'none';
+                    document.getElementById('logout-item').style.display = 'block';
+                } else {
+                    document.getElementById('login-item').style.display = 'block';
+                    document.getElementById('logout-item').style.display = 'none';
+                }
+            });
+    </script>
 </body>
 </html>
+
