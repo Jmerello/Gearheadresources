@@ -43,6 +43,23 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Serve the admin page (for admin users only, can add more security checks)
+app.get('/admin', (req, res) => {
+  // Check if the user is logged in and is an admin (for now, we assume admin has user_id = 1)
+  if (!req.session.userId || req.session.userId !== 1) {
+    return res.status(403).json({ error: 'You are not authorized to view this page.' });
+  }
+
+  // Fetch user activity from the database
+  db.all('SELECT u.username, ua.time_spent, ua.test_score, ua.last_activity FROM user_activity ua JOIN users u ON ua.user_id = u.id', (err, rows) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error fetching user data.' });
+    }
+    // Return the user data in JSON format
+    res.json({ users: rows });
+  });
+});
+
 // Check if user is logged in
 app.get('/check-login', (req, res) => {
   if (req.session.userId) {
