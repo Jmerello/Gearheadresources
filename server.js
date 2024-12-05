@@ -1,4 +1,3 @@
-
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcrypt');
@@ -36,12 +35,12 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
 // Create users table if it doesn't exist
 db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)');
 
-// Serve the root page (`/`) and `index.html`
+// Serve the root page (`/`) and `index.html` regardless of login status
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Check if user is logged in (no redirect)
+// Check if user is logged in
 app.get('/check-login', (req, res) => {
   if (req.session.userId) {
     res.json({ loggedIn: true });
@@ -78,7 +77,7 @@ app.post('/login', (req, res) => {
       // Store the user information in the session
       req.session.userId = row.id; // Store the user ID in the session (or any other user data you want)
 
-      // Redirect to the home page after successful login
+      // Stay on the homepage after successful login (no redirect)
       res.redirect('/');
     });
   });
@@ -91,8 +90,8 @@ app.get('/logout', (req, res) => {
       return res.status(500).json({ error: 'Failed to log out.' });
     }
 
-    // Redirect to the login page after successful logout
-    res.redirect('/login');
+    // Stay on the homepage after successful logout (no redirect)
+    res.redirect('/');
   });
 });
 
