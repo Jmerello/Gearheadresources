@@ -159,7 +159,7 @@ app.post('/forgot-password', (req, res) => {
     const resetToken = Math.random().toString(36).substr(2);
 
     // Normally, you would send this token to the user via email, but for now, we’ll just log it
-    console.log(Password reset token for ${username}: ${resetToken});
+    console.log('Password reset token for ${username}: ${resetToken}');
 
     // Here you would send an email with the reset token (not implemented)
     res.json({ message: 'Password reset link sent to your email.' });
