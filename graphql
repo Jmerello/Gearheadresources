@@ -36,9 +36,11 @@ gearheadresources/
 │   ├── signup.html                   # Signup page
 │   ├── style.css                     # CSS stylesheet
 │   ├── training.html                 # HTML page for training
-│   ├── generateHash.js               # JavaScript file for password hashing
 │   └── (other public files)          # Other HTML, JS, or assets
 │
 ├── server.js                         # Server logic
 ├── package.json                      # Project metadata (dependencies)
+├── package-lock.json                 # Lock file for npm dependencies
+├── generateHash.js                   # Password hashing script (if used for signup/login)
 └── graphql/                          # GraphQL files (if any)
+    └── (your GraphQL files here, if used)
