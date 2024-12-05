@@ -36,9 +36,15 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
 // Create users table if it doesn't exist
 db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)');
 
-// Redirect root ('/') to '/login'
+// Serve the root page (`/`) and `index.html` if the user is logged in
 app.get('/', (req, res) => {
-  res.redirect('/login'); // Redirect to login page
+  if (req.session.userId) {
+    // If user is logged in, serve the index page
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  } else {
+    // If not logged in, redirect to login
+    res.redirect('/login');
+  }
 });
 
 // Serve the login page
@@ -113,20 +119,9 @@ app.post('/login', (req, res) => {
       req.session.userId = row.id; // Store the user ID in the session (or any other user data you want)
 
       // Redirect to the home page after successful login
-      res.redirect('/index.html'); // Correct path to home page
+      res.redirect('/');
     });
   });
-});
-
-// Serve the home page
-app.get('/index.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));  // Serve your actual home page HTML file
-});
-
-// Handle forgot password form submission (Placeholder)
-app.post('/forgot-password', (req, res) => {
-  const { email } = req.body;
-  res.send(`Password reset instructions sent to ${email}`);
 });
 
 // Handle logout
@@ -145,4 +140,3 @@ app.get('/logout', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
-
