@@ -57,25 +57,17 @@
 
     <script>
         // Check if the user is logged in by calling the check-login route
-        fetch('../check-login')
+        fetch('/check-login')
             .then(response => response.json())
             .then(data => {
                 if (data.loggedIn) {
                     // Show logged-in elements
-                    document.getElementById('login-button').style.display = 'none';
-                    document.getElementById('logout-button').style.display = 'block';
-                    document.getElementById('index.html').style.display = 'block';
-                    document.getElementById('training.html').style.display = 'block';
-                    document.getElementById('resources.html').style.display = 'block';
-                    document.getElementById('contact_us.html').style.display = 'block';
+                    document.getElementById('login-item').style.display = 'none';
+                    document.getElementById('logout-item').style.display = 'block';
                 } else {
                     // Show logged-out elements
-                    document.getElementById('login-button').style.display = 'block';
-                    document.getElementById('logout-button').style.display = 'none';
-                    document.getElementById('index.html').style.display = 'none';
-                    document.getElementById('training.html').style.display = 'none';
-                    document.getElementById('resources.html').style.display = 'none';
-                    document.getElementById('contact_us.html').style.display = 'none';
+                    document.getElementById('login-item').style.display = 'block';
+                    document.getElementById('logout-item').style.display = 'none';
                 }
             });
     </script>
