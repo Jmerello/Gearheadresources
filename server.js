@@ -20,10 +20,7 @@ app.use(session({
   secret: sessionSecret,
   resave: false,
   saveUninitialized: true,
-  cookie: { 
-    secure: false, // Set to true if you're using HTTPS in production
-    maxAge: 24 * 60 * 60 * 1000  // Session expires after 1 day (24 hours)
-  }
+  cookie: { secure: false } // Set to true if you're using HTTPS
 }));
 
 // Connect to SQLite database
@@ -35,32 +32,12 @@ const db = new sqlite3.Database('./gearheadresources.db', (err) => {
   }
 });
 
-// Create users table if it doesn't exist, with an `isAdmin` field
-db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT, isAdmin BOOLEAN DEFAULT 0)');
+// Create users table if it doesn't exist
+db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)');
 
-// Serve the root page (`/`) and `index.html` regardless of login status
+// Serve the root page (/) and index.html regardless of login status
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// Serve the Admin Page
-app.get('/admin', (req, res) => {
-  // Ensure only admins can access the admin page
-  if (!req.session.userId || !req.session.isAdmin) {
-    return res.status(403).send('Access denied');
-  }
-
-  // Query to fetch user data
-  db.all('SELECT username, timeSpent, testScores, lastLogin FROM users', (err, rows) => {
-    if (err) {
-      return res.status(500).json({ error: 'Error fetching user data' });
-    }
-
-    // Send the user data as JSON
-    res.json({
-      users: rows
-    });
-  });
 });
 
 // Check if user is logged in
@@ -99,9 +76,6 @@ app.post('/login', (req, res) => {
 
       // Store the user information in the session
       req.session.userId = row.id; // Store the user ID in the session (or any other user data you want)
-      req.session.isAdmin = row.isAdmin; // Store admin status in the session
-
-      console.log('User logged in:', req.session.userId); // Log for debugging
 
       // Stay on the homepage after successful login (no redirect)
       res.redirect('/');
@@ -128,7 +102,7 @@ app.get('/signup', (req, res) => {
 
 // Handle signup form submission
 app.post('/signup', (req, res) => {
-  const { username, password, isAdmin } = req.body;
+  const { username, password } = req.body;
 
   // Check if the username already exists
   db.get('SELECT * FROM users WHERE username = ?', [username], (err, row) => {
@@ -147,16 +121,13 @@ app.post('/signup', (req, res) => {
       }
 
       // Insert new user into the database
-      db.run('INSERT INTO users (username, password, isAdmin) VALUES (?, ?, ?)', [username, hashedPassword, isAdmin || 0], function (err) {
+      db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], function (err) {
         if (err) {
           return res.status(500).json({ error: 'Error saving user to database.' });
         }
 
         // Log the user in by storing user ID in the session
         req.session.userId = this.lastID; // Store the user ID in the session
-        req.session.isAdmin = isAdmin || 0; // Store admin status in the session
-
-        console.log('New user signed up:', req.session.userId); // Log for debugging
 
         // Redirect to the homepage after successful signup
         res.redirect('/');
@@ -188,7 +159,7 @@ app.post('/forgot-password', (req, res) => {
     const resetToken = Math.random().toString(36).substr(2);
 
     // Normally, you would send this token to the user via email, but for now, we’ll just log it
-    console.log(`Password reset token for ${username}: ${resetToken}`);
+    console.log(Password reset token for ${username}: ${resetToken});
 
     // Here you would send an email with the reset token (not implemented)
     res.json({ message: 'Password reset link sent to your email.' });
@@ -197,5 +168,5 @@ app.post('/forgot-password', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+  console.log(Server running at http://localhost:${port}/);
 });
