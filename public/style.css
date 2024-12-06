@@ -27,11 +27,14 @@ body::before {
 
 /* Logo Styling */
 .site-logo {
-    position: absolute; /* Position relative to the body */
-    top: 1in; /* Match your existing body margin */
-    left: 1in; /* Match your existing body margin */
-    width: 80px; /* Adjust as per your desired logo size */
-    height: auto; /* Maintain aspect ratio */
+    position: absolute; /* Positioned relative to the header */
+    top: 50%; /* Center vertically within the header */
+    left: 1in; /* Align with the body's left margin */
+    width: 60px; /* Set square dimensions */
+    height: 60px; /* Matches width for square aspect */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    background: url('images/gearheadLogo.webp') no-repeat center/contain; /* Add the logo image */
+    background-size: contain; /* Ensure the image scales proportionally */
     z-index: 1000; /* Ensure it stays above other content */
 }
 
@@ -278,12 +281,18 @@ a:active {
         font-size: 14px;
     }
 
-    /* Adjust logo size for smaller screens */
-    .site-logo {
-        top: 20px;
-        left: 20px;
-        width: 50px; /* Reduce size for mobile */
-    }
+    /* Logo Styling */
+.site-logo {
+    position: absolute; /* Positioned relative to the header */
+    top: 50%; /* Center vertically within the header */
+    left: 1in; /* Align with the body's left margin */
+    width: 60px; /* Set square dimensions */
+    height: 60px; /* Matches width for square aspect */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    background: url('images/gearheadLogo.webp') no-repeat center/contain; /* Add the logo image */
+    background-size: contain; /* Ensure the image scales proportionally */
+    z-index: 1000; /* Ensure it stays above other content */
+}
 }
 
 /* Optional: For very small screens (less than 480px) */
