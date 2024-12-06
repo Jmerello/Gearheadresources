@@ -40,6 +40,8 @@ header {
     text-align: center;/* Vertically center the content */
     justify-content: space-between; /* Space between logo and header title */
     position: relative;
+    background: url('images/gearheadLogo.webp') no-repeat left center; /* Add logo to the left */
+    background-size: 60px 60px; /* Set the size of the logo */
     padding-left: 80px; /* Add padding to prevent overlap with the logo */
 }
 
@@ -48,8 +50,6 @@ header h1 {
     margin: 0 auto;
     font-size: 36px;
     color: #ff6600;  /* Bright orange for a bold look */
-    flex-grow: 1; /* Allow title to take remaining space */
-    text-align: center; /* Center the header title */
 }
 
 
