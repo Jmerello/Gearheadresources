@@ -40,15 +40,9 @@ header {
     align-items: center; /* Vertically center the content */
     justify-content: space-between; /* Space between logo and header title */
     position: relative;
-}
-
-/* Logo Styling */
-.site-logo {
-    width: 60px; /* Set logo size */
-    height: 60px; /* Keep logo square */
-    background: url('images/gearheadLogo.webp') no-repeat center/contain;
-    background-size: contain; /* Ensure the image scales proportionally */
-    z-index: 1000; /* Keep logo above other content */
+    background: url('images/gearheadLogo.webp') no-repeat left center; /* Add logo to the left */
+    background-size: 60px 60px; /* Set the size of the logo */
+    padding-left: 80px; /* Add padding to prevent overlap with the logo */
 }
 
 /* Header Title Styling */
@@ -59,6 +53,7 @@ header h1 {
     flex-grow: 1; /* Allow title to take remaining space */
     text-align: center; /* Center the header title */
 }
+
 
 /* Navigation Bar */
 nav ul {
