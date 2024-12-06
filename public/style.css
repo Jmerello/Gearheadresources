@@ -36,13 +36,9 @@ body::before {
 header {
     background-color: rgba(51, 51, 51, 0.8);  /* Semi-transparent background */
     padding: 20px 0;
-    display: flex; /* Use flexbox to align content */
     text-align: center;/* Vertically center the content */
-    justify-content: space-between; /* Space between logo and header title */
-    position: relative;
     background: url('images/gearheadLogo.webp') no-repeat left center; /* Add logo to the left */
     background-size: 60px 60px; /* Set the size of the logo */
-    padding-left: 80px; /* Add padding to prevent overlap with the logo */
 }
 
 /* Header Title Styling */
