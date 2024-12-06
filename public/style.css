@@ -47,7 +47,7 @@ header {
 
 /* Header Title Styling */
 header h1 {
-    margin: 0;
+    margin: 0 auto;
     font-size: 36px;
     color: #ff6600;  /* Bright orange for a bold look */
     flex-grow: 1; /* Allow title to take remaining space */
