@@ -25,6 +25,16 @@ body::before {
     z-index: -1;
 }
 
+/* Logo Styling */
+.site-logo {
+    position: absolute; /* Position relative to the body */
+    top: 1in; /* Match your existing body margin */
+    left: 1in; /* Match your existing body margin */
+    width: 80px; /* Adjust as per your desired logo size */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
 /* Content section takes up available space */
 .content {
     flex-grow: 1;
