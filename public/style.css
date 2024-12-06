@@ -25,19 +25,6 @@ body::before {
     z-index: -1;
 }
 
-/* Logo Styling */
-.site-logo {
-    position: absolute; /* Positioned relative to the header */
-    top: 50%; /* Center vertically within the header */
-    left: 1in; /* Align with the body's left margin */
-    width: 60px; /* Set square dimensions */
-    height: 60px; /* Matches width for square aspect */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    background: url('images/gearheadLogo.webp') no-repeat center/contain; /* Add the logo image */
-    background-size: contain; /* Ensure the image scales proportionally */
-    z-index: 1000; /* Ensure it stays above other content */
-}
-
 /* Content section takes up available space */
 .content {
     flex-grow: 1;
@@ -49,14 +36,28 @@ body::before {
 header {
     background-color: rgba(51, 51, 51, 0.8);  /* Semi-transparent background */
     padding: 20px 0;
-    text-align: center;
+    display: flex; /* Use flexbox to align content */
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Space between logo and header title */
     position: relative;
 }
 
+/* Logo Styling */
+.site-logo {
+    width: 60px; /* Set logo size */
+    height: 60px; /* Keep logo square */
+    background: url('images/gearheadLogo.webp') no-repeat center/contain;
+    background-size: contain; /* Ensure the image scales proportionally */
+    z-index: 1000; /* Keep logo above other content */
+}
+
+/* Header Title Styling */
 header h1 {
     margin: 0;
     font-size: 36px;
     color: #ff6600;  /* Bright orange for a bold look */
+    flex-grow: 1; /* Allow title to take remaining space */
+    text-align: center; /* Center the header title */
 }
 
 /* Navigation Bar */
