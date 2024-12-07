@@ -23,19 +23,30 @@ body::before {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);  /* Black overlay with 50% opacity */
     z-index: -1;
+    padding-bottom: 50px; /* Prevents footer overlap */
 }
 
 /* Content section takes up available space */
 .content {
     flex-grow: 1;
     padding: 20px;
-    padding-bottom: 50px; /* Prevents footer overlap */
 }
 
 header {
     background-color: rgba(51, 51, 51, 0.8);  /* Semi-transparent background */
     height: 90px;
     text-align: center;/* Vertically center the content */
+}
+
+header::before {
+    content: "";
+    display: inline-block;
+    background: url('images/gearheadLogo.webp') no-repeat center center;
+    background-size: contain;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 20px;
 }
 
 /* Header Title Styling */
