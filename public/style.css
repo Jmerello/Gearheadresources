@@ -32,26 +32,35 @@ body::before {
     padding-bottom: 50px; /* Prevents footer overlap */
 }
 
+/* Header Styling */
 header {
-    background: url('images/gearheadLogo.webp') no-repeat left center; /* Add logo to the left */
-    background-size: 90px 90px; /* Set the size of the logo */
+    background-color: rgba(51, 51, 51, 0.8);  /* Semi-transparent dark background */
+    height: 90px;  /* Fixed height */
+    display: flex;  /* Flexbox for alignment */
+    align-items: center;  /* Vertically center items */
+    justify-content: center;  /* Center heading text by default */
+    position: relative;  /* Allows logo to be positioned */
+    padding: 0 20px;  /* Adds padding around the content */
 }
 
-/* Header Styling */
+/* Logo Styling */
 header::before {
-    background-color: rgba(51, 51, 51, 0.8);  /* Semi-transparent background */
-    width: 100%;
-    height: 90px;
-    flex-grow: 1;
-    text-align: center;/* Vertically center the content */
-    z-index: -1;
+    content: "";
+    display: inline-block;
+    background: url('images/gearheadLogo.webp') no-repeat center center;  /* Logo image */
+    background-size: contain;  /* Ensure the logo fits properly */
+    width: 60px;  /* Width of the logo */
+    height: 60px;  /* Height of the logo */
+    position: absolute;
+    left: 20px;  /* Position the logo on the left */
 }
 
 /* Header Title Styling */
 header h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 36px;  /* Keep the font size consistent */
     color: #ff6600;  /* Bright orange for a bold look */
+    z-index: 1;  /* Ensures heading stays on top */
 }
 
 /* Navigation Bar */
