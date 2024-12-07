@@ -49,8 +49,8 @@ header::before {
     display: inline-block;
     background: url('images/gearheadLogo.webp') no-repeat center center;  /* Logo image */
     background-size: contain;  /* Ensure the logo fits properly */
-    width: 60px;  /* Width of the logo */
-    height: 60px;  /* Height of the logo */
+    width: 90px;  /* Width of the logo */
+    height: 90px;  /* Height of the logo */
     position: absolute;
     left: 20px;  /* Position the logo on the left */
 }
