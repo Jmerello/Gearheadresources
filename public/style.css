@@ -38,18 +38,14 @@ header {
     height: 90px;
     padding: 20px 0;
     text-align: center;/* Vertically center the content */
-    background: url('images/gearheadLogo.webp') no-repeat left center; /* Add logo to the left */
-    background-size: 90px 90px; /* Set the size of the logo */
 }
 
 /* Header Title Styling */
 header h1 {
-    margin: 0 auto;
+    margin: 0;
     font-size: 36px;
     color: #ff6600;  /* Bright orange for a bold look */
-    line-height: 90px; /* Vertically align text within header height */
 }
-
 
 /* Navigation Bar */
 nav ul {
