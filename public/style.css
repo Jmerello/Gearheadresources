@@ -32,8 +32,13 @@ body::before {
     padding-bottom: 50px; /* Prevents footer overlap */
 }
 
-/* Header Styling */
 header {
+    background: url('images/gearheadLogo.webp') no-repeat left center; /* Add logo to the left */
+    background-size: 90px 90px; /* Set the size of the logo */
+}
+
+/* Header Styling */
+header::before {
     background-color: rgba(51, 51, 51, 0.8);  /* Semi-transparent background */
     height: 90px;
     padding: 20px 0;
@@ -268,31 +273,12 @@ a:active {
         padding: 8px 10px;
         font-size: 14px;
     }
-
-    /* Logo Styling */
-.site-logo {
-    position: absolute; /* Positioned relative to the header */
-    top: 50%; /* Center vertically within the header */
-    left: 1in; /* Align with the body's left margin */
-    width: 60px; /* Set square dimensions */
-    height: 60px; /* Matches width for square aspect */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    background: url('images/gearheadLogo.webp') no-repeat center/contain; /* Add the logo image */
-    background-size: contain; /* Ensure the image scales proportionally */
-    z-index: 1000; /* Ensure it stays above other content */
-}
 }
 
 /* Optional: For very small screens (less than 480px) */
 @media screen and (max-width: 480px) {
     header h1 {
         font-size: 24px;
-    }
-
-    .site-logo {
-        top: 20px; /* Adjust spacing for smaller screens */
-        left: 20px;
-        width: 50px; /* Reduce size for mobile */
     }
 
     .resource-item {
