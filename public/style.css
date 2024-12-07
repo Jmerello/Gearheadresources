@@ -40,7 +40,6 @@ header {
     align-items: center;  /* Vertically center items */
     justify-content: center;  /* Center heading text by default */
     position: relative;  /* Allows logo to be positioned */
-    padding: 20px 20px;  /* Adds padding around the content */
 }
 
 /* Logo Styling */
