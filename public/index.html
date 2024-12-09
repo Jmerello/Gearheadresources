@@ -60,19 +60,6 @@
 
             if (data.loggedIn) {
                 // Show logged-in elements
-                document.getElementById('login-item').style.display = 'none';
-                document.getElementById('home-item').style.display = 'block';
-                document.getElementById('training-item').style.display = 'block';
-                document.getElementById('resources-item').style.display = 'block';
-                document.getElementById('contact_us-item').style.display = 'block';
-                document.getElementById('logout-item').style.display = 'block';
-
-                // Make links visible
-                links.forEach(link => {
-                    link.style.display = 'block'; // Show all the links
-                });
-            } else {
-                // Show logged-out elements
                 document.getElementById('login-item').style.display = 'block';
                 document.getElementById('home-item').style.display = 'none';
                 document.getElementById('training-item').style.display = 'none';
@@ -80,9 +67,22 @@
                 document.getElementById('contact_us-item').style.display = 'none';
                 document.getElementById('logout-item').style.display = 'none';
 
+                // Make links visible
+                links.forEach(link => {
+                    link.style.display = 'none'; // Show all the links
+                });
+            } else {
+                // Show logged-out elements
+                document.getElementById('login-item').style.display = 'none';
+                document.getElementById('home-item').style.display = 'block';
+                document.getElementById('training-item').style.display = 'block';
+                document.getElementById('resources-item').style.display = 'block';
+                document.getElementById('contact_us-item').style.display = 'block';
+                document.getElementById('logout-item').style.display = 'block';
+
                 // Hide all the links
                 links.forEach(link => {
-                    link.style.display = 'none'; // Hide all the links
+                    link.style.display = 'block'; // Hide all the links
                 });
             }
         });
