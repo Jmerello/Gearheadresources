@@ -61,6 +61,10 @@
             if (data.loggedIn) {
                 // Show logged-in elements
                 document.getElementById('login-item').style.display = 'none';
+                document.getElementById('home-item').style.display = 'block';
+                document.getElementById('training-item').style.display = 'block';
+                document.getElementById('resources-item').style.display = 'block';
+                document.getElementById('contact_us-item').style.display = 'block';
                 document.getElementById('logout-item').style.display = 'block';
 
                 // Make links visible
@@ -70,6 +74,10 @@
             } else {
                 // Show logged-out elements
                 document.getElementById('login-item').style.display = 'block';
+                document.getElementById('home-item').style.display = 'none';
+                document.getElementById('training-item').style.display = 'none';
+                document.getElementById('resources-item').style.display = 'none';
+                document.getElementById('contact_us-item').style.display = 'none';
                 document.getElementById('logout-item').style.display = 'none';
 
                 // Hide all the links
