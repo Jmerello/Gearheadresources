@@ -5,26 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CONTACT US</title>
         <link rel="stylesheet" href="style.css">
+        <style>
+            .contact-container {
+                text-align: center;  /* Center content within this container */
+            }
+            .contact-container nav ul {
+                display: inline-block; /* Ensures the nav list behaves like an inline element */
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <header>
             <h1>Contact Us</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                    </ul>
-                </nav>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
-            <h1>Email</h1>
+            <div class="contact-container">
+                <h1>Email</h1>
                 <nav>
                     <ul>
-                        <li><a href="mailto:gearheadresources">gearheadresources<wbr>@yahoo.com</a></li>
+                        <li>
+                            <a href="mailto:gearheadresources">gearheadresources<wbr>@yahoo.com</a>
+                        </li>
                     </ul>
                 </nav>
-            <section>
-                <p>Contact us with any advice about the site</p>
-            </section>
+                <section>
+                    <p>Contact us with any advice about the site</p>
+                </section>
+            </div>
         </main>
         <footer>
             <p>&copy; 2024 GearheadResources. All rights reserved.</p>
