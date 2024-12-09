@@ -8,7 +8,7 @@ const app = express();
 const port = 3000;
 
 // Use a secure session secret key
-const sessionSecret = 'your_secure_session_secret'; // Use a securely generated string
+const sessionSecret = 'f3c8b9a14d7e6f21a3b2c9d0e8f5a7d6b3c2a1f4e9b8c7d6f3e2b1a4d9f8e7c6'; // Use a securely generated string
 
 // Middleware
 app.use(express.json());
