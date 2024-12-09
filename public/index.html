@@ -56,37 +56,36 @@
     fetch('/check-login')
         .then(response => response.json())
         .then(data => {
-            const links = document.querySelectorAll('nav ul li a'); // Get all <a> elements inside the <nav>
+            // Get specific nav items by their IDs
+            const loginItem = document.getElementById('login-item');
+            const logoutItem = document.getElementById('logout-item');
+            const homeItem = document.getElementById('home-item');
+            const trainingItem = document.getElementById('training-item');
+            const resourcesItem = document.getElementById('resources-item');
+            const contactUsItem = document.getElementById('contact_us-item');
 
             if (data.loggedIn) {
-                // Show logged-in elements
-                document.getElementById('login-item').style.display = 'block';
-                document.getElementById('home-item').style.display = 'none';
-                document.getElementById('training-item').style.display = 'none';
-                document.getElementById('resources-item').style.display = 'none';
-                document.getElementById('contact_us-item').style.display = 'none';
-                document.getElementById('logout-item').style.display = 'none';
-
-                // Make links visible
-                links.forEach(link => {
-                    link.style.display = 'none'; // Show all the links
-                });
+                // User is logged in: show navigation items and logout button
+                loginItem.style.display = 'none';
+                logoutItem.style.display = 'block';
+                homeItem.style.display = 'block';
+                trainingItem.style.display = 'block';
+                resourcesItem.style.display = 'block';
+                contactUsItem.style.display = 'block';
             } else {
-                // Show logged-out elements
-                document.getElementById('login-item').style.display = 'none';
-                document.getElementById('home-item').style.display = 'block';
-                document.getElementById('training-item').style.display = 'block';
-                document.getElementById('resources-item').style.display = 'block';
-                document.getElementById('contact_us-item').style.display = 'block';
-                document.getElementById('logout-item').style.display = 'block';
-
-                // Hide all the links
-                links.forEach(link => {
-                    link.style.display = 'block'; // Hide all the links
-                });
+                // User is logged out: show login button only
+                loginItem.style.display = 'block';
+                logoutItem.style.display = 'none';
+                homeItem.style.display = 'none';
+                trainingItem.style.display = 'none';
+                resourcesItem.style.display = 'none';
+                contactUsItem.style.display = 'none';
             }
+        })
+        .catch(error => {
+            console.error('Error checking login status:', error);
         });
-</script>
+    </script>
 </body>
 </html>
 
