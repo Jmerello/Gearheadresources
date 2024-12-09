@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress</title>
+    <link rel="stylesheet" href="style.css"> <!-- Your existing CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>My Progress</h1>
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td id="firstName"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td id="lastName"></td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td id="dateOfBirth"></td>
+            </tr>
+            <tr>
+                <td>Last Four</td>
+                <td id="lastFour"></td>
+            </tr>
+            <tr>
+                <td>T1</td>
+                <td id="t1"></td>
+            </tr>
+            <tr>
+                <td>T2</td>
+                <td id="t2"></td>
+            </tr>
+            <tr>
+                <td>T3</td>
+                <td id="t3"></td>
+            </tr>
+            <tr>
+                <td>T4</td>
+                <td id="t4"></td>
+            </tr>
+            <tr>
+                <td>T5</td>
+                <td id="t5"></td>
+            </tr>
+            <tr>
+                <td>T6</td>
+                <td id="t6"></td>
+            </tr>
+            <tr>
+                <td>T7</td>
+                <td id="t7"></td>
+            </tr>
+            <tr>
+                <td>T8</td>
+                <td id="t8"></td>
+            </tr>
+            <tr>
+                <td>T9</td>
+                <td id="t9"></td>
+            </tr>
+            <tr>
+                <td>T10</td>
+                <td id="t10"></td>
+            </tr>
+            <tr>
+                <td>Final Score</td>
+                <td id="final"></td>
+            </tr>
+            <tr>
+                <td>GPA</td>
+                <td id="gpa"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Fetch user data from the server
+        fetch('/user-progress')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('firstName').textContent = data.firstName || 'N/A';
+                document.getElementById('lastName').textContent = data.lastName || 'N/A';
+                document.getElementById('dateOfBirth').textContent = data.dateOfBirth || 'N/A';
+                document.getElementById('lastFour').textContent = data.lastFour || 'N/A';
+                document.getElementById('t1').textContent = data.t1 || 'N/A';
+                document.getElementById('t2').textContent = data.t2 || 'N/A';
+                document.getElementById('t3').textContent = data.t3 || 'N/A';
+                document.getElementById('t4').textContent = data.t4 || 'N/A';
+                document.getElementById('t5').textContent = data.t5 || 'N/A';
+                document.getElementById('t6').textContent = data.t6 || 'N/A';
+                document.getElementById('t7').textContent = data.t7 || 'N/A';
+                document.getElementById('t8').textContent = data.t8 || 'N/A';
+                document.getElementById('t9').textContent = data.t9 || 'N/A';
+                document.getElementById('t10').textContent = data.t10 || 'N/A';
+                document.getElementById('final').textContent = data.final || 'N/A';
+                document.getElementById('gpa').textContent = data.gpa || 'N/A';
+            })
+            .catch(err => {
+                console.error('Error fetching user progress:', err);
+            });
+    </script>
+</body>
+</html>
