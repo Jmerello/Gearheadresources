@@ -46,7 +46,7 @@ header::before {
     width: 90px;
     height: 90px;
     position: absolute;
-    left: 20px;
+    left: 1in;
 }
 
 /* Header Title Styling */
